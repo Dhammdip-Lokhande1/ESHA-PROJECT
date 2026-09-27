@@ -1,0 +1,4 @@
+pair_id,fusion_score,pred,label,transformation_type
+1,0.628596,0,1,variable_renaming
+2,0.134138,0,0,partial_match
+3,0.830197,1,1,variable_renaming

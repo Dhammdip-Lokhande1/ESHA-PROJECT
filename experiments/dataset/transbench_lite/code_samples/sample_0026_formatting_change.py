@@ -1,0 +1,6 @@
+# EHSA TransBench-Lite Formatting Transformation
+# Author Solution - Refactored Layout
+
+print('\n'.join(f'{i}x{j}={i*j}' for i in range(1, 10) for j in range(1, 10)))
+
+# End of file

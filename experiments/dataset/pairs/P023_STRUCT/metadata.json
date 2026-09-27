@@ -1,0 +1,17 @@
+{
+  "pair_id": "P023_STRUCT",
+  "source_program_id": "P023",
+  "domain": "Queue Data Structure",
+  "category": "structural_refactoring",
+  "label": 1,
+  "language": "python",
+  "source_type": "internal_synthetic",
+  "source_dataset": "EHSA_Benchmark_v1",
+  "transformation_type": "structural_refactoring",
+  "transformation_description": "Control-flow / algorithm structure refactoring",
+  "behavior_preserved": true,
+  "validation_status": "passed",
+  "fold": 4,
+  "license": "MIT",
+  "provenance": "EHSA Research Team controlled synthetic generation"
+}

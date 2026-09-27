@@ -1,0 +1,11 @@
+pair_id,label,category,lexical,structural,semantic,fixed_fusion_score,research_fusion_score,predicted_label
+codenet_pos_4_0,1,same_problem_functionally_related,0.110345,0.318848,0.527611,0.35022745000000005,0.4719896917196264,0
+codenet_neg_2,0,different_problem_unrelated,0.042553,0.225968,0.56,0.31372705000000006,0.4556606343922275,0
+codenet_pos_1_1,1,same_problem_functionally_related,0.283019,0.803261,0.779675,0.6637660999999999,0.5995676122597986,1
+codenet_neg_3,0,different_problem_unrelated,0.012821,0.241163,0.425877,0.2579631,0.43658445785096006,0
+codenet_pos_8_0,1,same_problem_functionally_related,0.2,0.578704,0.711223,0.5370356000000001,0.5475911683296139,1
+codenet_pos_1_0,1,same_problem_functionally_related,0.234375,0.574811,0.802004,0.5805792,0.5627835201643029,1
+codenet_neg_1,0,different_problem_unrelated,0.067797,0.320309,0.362522,0.2740662,0.4451239572546518,0
+codenet_pos_9_0,1,same_problem_functionally_related,0.333333,0.576466,0.767919,0.59226395,0.5671160950764013,1
+codenet_neg_4,0,different_problem_unrelated,0.073684,0.27739,0.579268,0.34721470000000004,0.4693699623096899,0
+codenet_neg_0,0,different_problem_unrelated,0.126316,0.296296,0.345649,0.2735422,0.4442084436069966,0

@@ -1,0 +1,52 @@
+{
+  "dataset_name": "IBM Project CodeNet (Python Benchmark)",
+  "official_source": "IBM Research (Puri et al., NeurIPS 2021) / GitHub: IBM/Project_CodeNet",
+  "license": "Apache License 2.0",
+  "evaluation_pairs_count": 10,
+  "positive_pairs_count": 5,
+  "negative_pairs_count": 5,
+  "test_problem_groups_count": 4,
+  "learned_research_weights": {
+    "lexical": 0.23108630797978566,
+    "structural": 0.4074777562113764,
+    "semantic": 0.361435935808838
+  },
+  "map_at_r_retrieval_metric": 0.625,
+  "pairwise_metrics": [
+    {
+      "strategy": "Lexical Only",
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "roc_auc": 0.9600000000000001
+    },
+    {
+      "strategy": "Structural Only",
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1_score": 0.3333333333333333,
+      "roc_auc": 0.9600000000000001
+    },
+    {
+      "strategy": "Semantic Only",
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1_score": 0.8888888888888888,
+      "roc_auc": 0.92
+    },
+    {
+      "strategy": "Fixed Weight Fusion",
+      "precision": 1.0,
+      "recall": 0.2,
+      "f1_score": 0.3333333333333333,
+      "roc_auc": 1.0
+    },
+    {
+      "strategy": "Research Fusion (Logistic Regression)",
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1_score": 0.8888888888888888,
+      "roc_auc": 1.0
+    }
+  ]
+}

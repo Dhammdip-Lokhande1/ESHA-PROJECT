@@ -1,0 +1,5 @@
+Expected_Category,exact_copy,structural_refactoring,unrelated,variable_renaming
+exact_copy,28,0,0,0
+structural_refactoring,21,34,0,31
+unrelated,0,11,32,0
+variable_renaming,0,0,0,30

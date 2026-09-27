@@ -1,0 +1,78 @@
+{
+  "overall": {
+    "macro_f1": 0.5199,
+    "weighted_f1": 0.6146,
+    "expected_calibration_error": 0.2602,
+    "evidence_completeness_rate_pct": 100.0,
+    "total_test_pairs": 210
+  },
+  "per_class_metrics": {
+    "exact_copy": {
+      "precision": 0.5882,
+      "recall": 1.0,
+      "f1_score": 0.7407,
+      "support": 30
+    },
+    "partial_match": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1_score": 0.0,
+      "support": 0
+    },
+    "structural_refactoring": {
+      "precision": 0.7556,
+      "recall": 0.3778,
+      "f1_score": 0.5037,
+      "support": 90
+    },
+    "unrelated": {
+      "precision": 1.0,
+      "recall": 0.5333,
+      "f1_score": 0.6957,
+      "support": 60
+    },
+    "variable_renaming": {
+      "precision": 0.4918,
+      "recall": 1.0,
+      "f1_score": 0.6593,
+      "support": 30
+    }
+  },
+  "calibration_bins": [
+    {
+      "bin": "[0.0, 0.2]",
+      "count": 52,
+      "avg_confidence": 0.0555,
+      "avg_accuracy": 0.6538,
+      "abs_error": 0.5984
+    },
+    {
+      "bin": "[0.2, 0.4]",
+      "count": 18,
+      "avg_confidence": 0.3234,
+      "avg_accuracy": 0.5,
+      "abs_error": 0.1766
+    },
+    {
+      "bin": "[0.4, 0.6]",
+      "count": 22,
+      "avg_confidence": 0.4711,
+      "avg_accuracy": 0.9545,
+      "abs_error": 0.4834
+    },
+    {
+      "bin": "[0.6, 0.8]",
+      "count": 35,
+      "avg_confidence": 0.7365,
+      "avg_accuracy": 1.0,
+      "abs_error": 0.2635
+    },
+    {
+      "bin": "[0.8, 1.0]",
+      "count": 83,
+      "avg_confidence": 0.9459,
+      "avg_accuracy": 0.9518,
+      "abs_error": 0.0059
+    }
+  ]
+}

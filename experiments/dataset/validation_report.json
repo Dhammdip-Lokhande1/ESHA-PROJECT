@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "total_pairs": 180,
+  "unique_source_programs": 30,
+  "category_distribution": {
+    "exact_copy": 30,
+    "variable_renaming": 30,
+    "structural_refactoring": 30,
+    "ai_rewrite": 30,
+    "hard_negative": 30,
+    "unrelated": 30
+  },
+  "licenses": [
+    "MIT"
+  ],
+  "data_leakage_prevented": true,
+  "syntax_errors_count": 0,
+  "failed_behavioral_count": 0,
+  "errors": [],
+  "warnings": []
+}

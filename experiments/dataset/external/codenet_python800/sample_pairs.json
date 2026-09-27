@@ -1,0 +1,902 @@
+[
+  {
+    "pair_id": "codenet_neg_29",
+    "code_a": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(min(10, n + 1)):\n        for b in range(min(10, n - a + 1)):\n            for c in range(min(10, n - a - b + 1)):\n                if 0 <= n - a - b - c <= 9:\n                    ans += 1\n    print(ans)",
+    "code_b": "import datetime, sys\nweek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nlines = sys.stdin.read().split()\ni = 0\nwhile i < len(lines):\n    m, d = int(lines[i]), int(lines[i+1])\n    if m == 0: break\n    i += 2\n    print(week[datetime.date(2004, m, d).weekday()])",
+    "problem_id_a": 9,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_2_5",
+    "code_a": "import heapq\nnums = [int(input()) for _ in range(10)]\nfor x in heapq.nlargest(3, nums):\n    print(x)",
+    "code_b": "import sys\ndata = [int(x) for x in sys.stdin.read().split()]\ndata.sort(reverse=True)\nprint(data[0])\nprint(data[1])\nprint(data[2])",
+    "problem_id_a": 2,
+    "problem_id_b": 2,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_14",
+    "code_a": "h = []\nfor _ in range(10):\n    h.append(int(input()))\nh.sort(reverse=True)\nprint(*h[:3], sep='\\n')",
+    "code_b": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "problem_id_a": 2,
+    "problem_id_b": 15,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_8_1",
+    "code_a": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+    "code_b": "import math\nn = int(input())\namount = 100000\nfor i in range(n):\n    amount += amount * 0.05\n    amount = math.ceil(amount / 1000.0) * 1000\nprint(int(amount))",
+    "problem_id_a": 8,
+    "problem_id_b": 8,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_17",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nif lines:\n    n = int(lines[0])\n    idx = 1\n    for _ in range(n):\n        a, b = int(lines[idx]), int(lines[idx+1])\n        idx += 2\n        val = a + b\n        print(val if len(str(val)) <= 80 else 'overflow')",
+    "code_b": "import sys\nfor line in sys.stdin:\n    line = line.strip()\n    for i in range(26):\n        s = ''\n        for c in line:\n            s += chr((ord(c)-97+i)%26+97) if 'a'<=c<='z' else c\n        if any(w in s for w in ['the', 'this', 'that']):\n            print(s)\n            break",
+    "problem_id_a": 16,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_25",
+    "code_a": "import sys\nfor line in sys.stdin:\n    month, day = map(int, line.split())\n    if month == 0: break\n    import datetime\n    w = datetime.date(2004, month, day).strftime('%A')\n    print(w)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(min(10, n + 1)):\n        for b in range(min(10, n - a + 1)):\n            for c in range(min(10, n - a - b + 1)):\n                if 0 <= n - a - b - c <= 9:\n                    ans += 1\n    print(ans)",
+    "problem_id_a": 28,
+    "problem_id_b": 9,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_18_2",
+    "code_a": "import sys\ndef decrypt(text, k):\n    res = []\n    for ch in text:\n        if 'a' <= ch <= 'z':\n            res.append(chr((ord(ch) - ord('a') + k) % 26 + ord('a')))\n        else:\n            res.append(ch)\n    return ''.join(res)\nfor line in sys.stdin:\n    txt = line.rstrip('\\r\\n')\n    for shift in range(26):\n        cand = decrypt(txt, shift)\n        if 'the' in cand or 'this' in cand or 'that' in cand:\n            print(cand)\n            break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    line = line.strip()\n    for i in range(26):\n        s = ''\n        for c in line:\n            s += chr((ord(c)-97+i)%26+97) if 'a'<=c<='z' else c\n        if any(w in s for w in ['the', 'this', 'that']):\n            print(s)\n            break",
+    "problem_id_a": 18,
+    "problem_id_b": 18,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_9_3",
+    "code_a": "import sys\nfor line in sys.stdin:\n    target = int(line)\n    c = 0\n    for a in range(10):\n        for b in range(10):\n            for d in range(10):\n                e = target - (a + b + d)\n                if 0 <= e <= 9:\n                    c += 1\n    print(c)",
+    "code_b": "import sys\nfor l in sys.stdin:\n    n = int(l)\n    cnt = 0\n    for i in range(10):\n        for j in range(10):\n            for k in range(10):\n                m = n - i - j - k\n                if 0 <= m <= 9: cnt += 1\n    print(cnt)",
+    "problem_id_a": 9,
+    "problem_id_b": 9,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_6_4",
+    "code_a": "import math, sys\nfor l in sys.stdin:\n    u, v = map(int, l.split())\n    gc = math.gcd(u, v)\n    lc = u * v // gc\n    print(f'{gc} {lc}')",
+    "code_b": "def calc_gcd(m, n):\n    return m if n == 0 else calc_gcd(n, m % n)\nimport sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = calc_gcd(a, b)\n    print(g, (a * b) // g)",
+    "problem_id_a": 6,
+    "problem_id_b": 6,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_31",
+    "code_a": "import datetime, sys\nweek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nlines = sys.stdin.read().split()\ni = 0\nwhile i < len(lines):\n    m, d = int(lines[i]), int(lines[i+1])\n    if m == 0: break\n    i += 2\n    print(week[datetime.date(2004, m, d).weekday()])",
+    "code_b": "weeks = int(input())\nval = 100000\nfor w in range(weeks):\n    val = int(val * 1.05)\n    rem = val % 1000\n    if rem > 0:\n        val += (1000 - rem)\nprint(val)",
+    "problem_id_a": 28,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_9",
+    "code_a": "import sys\nn = int(sys.stdin.read())\ncur = 100000\nfor _ in range(n):\n    cur = int(cur * 1.05)\n    if cur % 1000 != 0:\n        cur = (cur // 1000 + 1) * 1000\nprint(cur)",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    v = int(s)\n    c = 0\n    for a in range(10):\n        for b in range(10):\n            for cc in range(10):\n                if 0 <= v - a - b - cc <= 9:\n                    c += 1\n    print(c)",
+    "problem_id_a": 8,
+    "problem_id_b": 9,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_18_5",
+    "code_a": "import sys\nfor line in sys.stdin:\n    orig = line.strip()\n    for k in range(26):\n        trans = orig.translate(str.maketrans('abcdefghijklmnopqrstuvwxyz', ''.join(chr((i + k) % 26 + 97) for i in range(26))))\n        if 'the' in trans or 'this' in trans or 'that' in trans:\n            print(trans)\n            break",
+    "code_b": "import sys\nfor text in sys.stdin.read().splitlines():\n    if not text: continue\n    for k in range(26):\n        dec = ''.join(chr((ord(c) - 97 + k) % 26 + 97) if 'a' <= c <= 'z' else c for c in text)\n        if 'the' in dec or 'this' in dec or 'that' in dec:\n            print(dec)\n            break",
+    "problem_id_a": 18,
+    "problem_id_b": 18,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_4",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    c = sorted(map(int, s.split(',')))\n    u = set(c)\n    st = (len(u) == 5 and c[4] - c[0] == 4) or c == [1, 10, 11, 12, 13]\n    counts = sorted([c.count(x) for x in u], reverse=True)\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif st: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+    "code_b": "while True:\n    try:\n        d = int(input())\n        area = 0\n        for x in range(d, 600, d):\n            area += (x**2) * d\n        print(area)\n    except:\n        break",
+    "problem_id_a": 39,
+    "problem_id_b": 15,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_7_5",
+    "code_a": "import sys\ntext = sys.stdin.readline().rstrip('\\r\\n')\nprint(text[::-1])",
+    "code_b": "string = str(input())\nrev = ''\nfor i in range(len(string)-1, -1, -1):\n    rev += string[i]\nprint(rev)",
+    "problem_id_a": 7,
+    "problem_id_b": 7,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_39_2",
+    "code_a": "import sys\nfor line in sys.stdin.read().splitlines():\n    if not line.strip(): continue\n    hand = sorted(list(map(int, line.split(','))))\n    c = {}\n    for card in hand: c[card] = c.get(card, 0) + 1\n    vals = sorted(c.values(), reverse=True)\n    st = (len(c) == 5 and hand[4] - hand[0] == 4) or hand == [1,10,11,12,13]\n    if vals == [4,1]: print('four card')\n    elif vals == [3,2]: print('full house')\n    elif st: print('straight')\n    elif vals == [3,1,1]: print('three card')\n    elif vals == [2,2,1]: print('two pair')\n    elif vals == [2,1,1,1]: print('one pair')\n    else: print('null')",
+    "code_b": "while True:\n    try:\n        cards = sorted(map(int, input().split(',')))\n        import collections\n        counts = sorted(collections.Counter(cards).values(), reverse=True)\n        straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n        if counts == [4, 1]: print('four card')\n        elif counts == [3, 2]: print('full house')\n        elif straight: print('straight')\n        elif counts == [3, 1, 1]: print('three card')\n        elif counts == [2, 2, 1]: print('two pair')\n        elif counts == [2, 1, 1, 1]: print('one pair')\n        else: print('null')\n    except:\n        break",
+    "problem_id_a": 39,
+    "problem_id_b": 39,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_28_1",
+    "code_a": "import datetime, sys\ndays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    dt = datetime.date(2004, m, d)\n    print(days[dt.weekday()])",
+    "code_b": "import datetime, sys\nweek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nlines = sys.stdin.read().split()\ni = 0\nwhile i < len(lines):\n    m, d = int(lines[i]), int(lines[i+1])\n    if m == 0: break\n    i += 2\n    print(week[datetime.date(2004, m, d).weekday()])",
+    "problem_id_a": 28,
+    "problem_id_b": 28,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_16_3",
+    "code_a": "for _ in range(int(input())):\n    num1 = int(input())\n    num2 = int(input())\n    res = num1 + num2\n    print(res if len(str(res)) <= 80 else 'overflow')",
+    "code_b": "import sys\nfor _ in range(int(sys.stdin.readline())):\n    x = int(sys.stdin.readline())\n    y = int(sys.stdin.readline())\n    ans = x + y\n    print(ans if len(str(ans)) <= 80 else 'overflow')",
+    "problem_id_a": 16,
+    "problem_id_b": 16,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_28_2",
+    "code_a": "import datetime, sys\nweek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nlines = sys.stdin.read().split()\ni = 0\nwhile i < len(lines):\n    m, d = int(lines[i]), int(lines[i+1])\n    if m == 0: break\n    i += 2\n    print(week[datetime.date(2004, m, d).weekday()])",
+    "code_b": "import sys\ndays_in_months = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]\nname = ['Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    day_count = sum(days_in_months[:m]) + d - 1\n    print(name[day_count % 7])",
+    "problem_id_a": 28,
+    "problem_id_b": 28,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_38",
+    "code_a": "import sys\ntext = sys.stdin.readline().rstrip('\\r\\n')\nprint(text[::-1])",
+    "code_b": "import sys\ndef decrypt(text, k):\n    res = []\n    for ch in text:\n        if 'a' <= ch <= 'z':\n            res.append(chr((ord(ch) - ord('a') + k) % 26 + ord('a')))\n        else:\n            res.append(ch)\n    return ''.join(res)\nfor line in sys.stdin:\n    txt = line.rstrip('\\r\\n')\n    for shift in range(26):\n        cand = decrypt(txt, shift)\n        if 'the' in cand or 'this' in cand or 'that' in cand:\n            print(cand)\n            break",
+    "problem_id_a": 7,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_15",
+    "code_a": "def calc_gcd(m, n):\n    return m if n == 0 else calc_gcd(n, m % n)\nimport sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = calc_gcd(a, b)\n    print(g, (a * b) // g)",
+    "code_b": "import sys\nn = int(sys.stdin.read())\ncur = 100000\nfor _ in range(n):\n    cur = int(cur * 1.05)\n    if cur % 1000 != 0:\n        cur = (cur // 1000 + 1) * 1000\nprint(cur)",
+    "problem_id_a": 6,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_8_5",
+    "code_a": "n = int(input())\nd = 100000\nfor _ in range(n):\n    d = int(d * 1.05)\n    if d % 1000:\n        d = (d // 1000 + 1) * 1000\nprint(d)",
+    "code_b": "import sys\nn = int(sys.stdin.read())\ncur = 100000\nfor _ in range(n):\n    cur = int(cur * 1.05)\n    if cur % 1000 != 0:\n        cur = (cur // 1000 + 1) * 1000\nprint(cur)",
+    "problem_id_a": 8,
+    "problem_id_b": 8,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_27",
+    "code_a": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(10):\n        for b in range(10):\n            for c in range(10):\n                for d in range(10):\n                    if a + b + c + d == n:\n                        ans += 1\n    print(ans)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "problem_id_a": 9,
+    "problem_id_b": 15,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_15_2",
+    "code_a": "while True:\n    try:\n        d = int(input())\n        area = 0\n        for x in range(d, 600, d):\n            area += (x**2) * d\n        print(area)\n    except:\n        break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "problem_id_a": 15,
+    "problem_id_b": 15,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_2_3",
+    "code_a": "a = [int(input()) for i in range(10)]\na.sort()\nprint(a[-1])\nprint(a[-2])\nprint(a[-3])",
+    "code_b": "h = []\nfor _ in range(10):\n    h.append(int(input()))\nh.sort(reverse=True)\nprint(*h[:3], sep='\\n')",
+    "problem_id_a": 2,
+    "problem_id_b": 2,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_15_4",
+    "code_a": "import sys\nfor l in sys.stdin.read().split():\n    d = int(l)\n    res = 0\n    for i in range(1, 600 // d):\n        res += (i * d)**2 * d\n    print(res)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "problem_id_a": 15,
+    "problem_id_b": 15,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_18",
+    "code_a": "string = str(input())\nrev = ''\nfor i in range(len(string)-1, -1, -1):\n    rev += string[i]\nprint(rev)",
+    "code_b": "n = int(input())\nd = 100000\nfor _ in range(n):\n    d = int(d * 1.05)\n    if d % 1000:\n        d = (d // 1000 + 1) * 1000\nprint(d)",
+    "problem_id_a": 7,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_6_1",
+    "code_a": "import math, sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = math.gcd(a, b)\n    l = (a * b) // g\n    print(g, l)",
+    "code_b": "import sys\ndef gcd(x, y):\n    while y:\n        x, y = y, x % y\n    return x\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = gcd(a, b)\n    print(g, (a * b) // g)",
+    "problem_id_a": 6,
+    "problem_id_b": 6,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_36",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nfor i in range(0, len(lines), 2):\n    x, y = int(lines[i]), int(lines[i+1])\n    import math\n    g = math.gcd(x, y)\n    print(g, x * y // g)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    cards = list(map(int, line.split(',')))\n    cards.sort()\n    from collections import Counter\n    freq = Counter(cards)\n    mc = freq.most_common()\n    is_str = (len(freq) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n    if mc[0][1] == 4: print('four card')\n    elif mc[0][1] == 3 and mc[1][1] == 2: print('full house')\n    elif is_str: print('straight')\n    elif mc[0][1] == 3: print('three card')\n    elif mc[0][1] == 2 and mc[1][1] == 2: print('two pair')\n    elif mc[0][1] == 2: print('one pair')\n    else: print('null')",
+    "problem_id_a": 6,
+    "problem_id_b": 39,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_39_3",
+    "code_a": "while True:\n    try:\n        cards = sorted(map(int, input().split(',')))\n        import collections\n        counts = sorted(collections.Counter(cards).values(), reverse=True)\n        straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n        if counts == [4, 1]: print('four card')\n        elif counts == [3, 2]: print('full house')\n        elif straight: print('straight')\n        elif counts == [3, 1, 1]: print('three card')\n        elif counts == [2, 2, 1]: print('two pair')\n        elif counts == [2, 1, 1, 1]: print('one pair')\n        else: print('null')\n    except:\n        break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    cards = list(map(int, line.split(',')))\n    cards.sort()\n    from collections import Counter\n    freq = Counter(cards)\n    mc = freq.most_common()\n    is_str = (len(freq) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n    if mc[0][1] == 4: print('four card')\n    elif mc[0][1] == 3 and mc[1][1] == 2: print('full house')\n    elif is_str: print('straight')\n    elif mc[0][1] == 3: print('three card')\n    elif mc[0][1] == 2 and mc[1][1] == 2: print('two pair')\n    elif mc[0][1] == 2: print('one pair')\n    else: print('null')",
+    "problem_id_a": 39,
+    "problem_id_b": 39,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_39_5",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    c = sorted(map(int, s.split(',')))\n    u = set(c)\n    st = (len(u) == 5 and c[4] - c[0] == 4) or c == [1, 10, 11, 12, 13]\n    counts = sorted([c.count(x) for x in u], reverse=True)\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif st: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+    "code_b": "import sys\nfor line in sys.stdin:\n    try:\n        h = list(map(int, line.split(',')))\n        if len(h) < 5: continue\n        h.sort()\n        counts = sorted([h.count(x) for x in set(h)], reverse=True)\n        st = (len(set(h)) == 5 and h[4] - h[0] == 4) or h == [1, 10, 11, 12, 13]\n        if counts[0] == 4: print('four card')\n        elif counts == [3, 2]: print('full house')\n        elif st: print('straight')\n        elif counts[0] == 3: print('three card')\n        elif counts == [2, 2, 1]: print('two pair')\n        elif counts[0] == 2: print('one pair')\n        else: print('null')\n    except:\n        break",
+    "problem_id_a": 39,
+    "problem_id_b": 39,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_42",
+    "code_a": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "code_b": "import sys\nfor l in sys.stdin:\n    str_in = l.strip()\n    for rot in range(26):\n        out = ''.join(chr((ord(c) - 97 + rot) % 26 + 97) if 'a' <= c <= 'z' else c for c in str_in)\n        if 'the' in out or 'this' in out or 'that' in out:\n            print(out)\n            break",
+    "problem_id_a": 15,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_12",
+    "code_a": "while True:\n    try:\n        n = int(input())\n        count = sum(1 for a in range(10) for b in range(10) for c in range(10) for d in range(10) if a+b+c+d == n)\n        print(count)\n    except:\n        break",
+    "code_b": "while True:\n    m, d = map(int, input().split())\n    if m == 0: break\n    import datetime\n    print(datetime.date(2004, m, d).strftime('%A'))",
+    "problem_id_a": 9,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_16_4",
+    "code_a": "import sys\nfor _ in range(int(sys.stdin.readline())):\n    x = int(sys.stdin.readline())\n    y = int(sys.stdin.readline())\n    ans = x + y\n    print(ans if len(str(ans)) <= 80 else 'overflow')",
+    "code_b": "import sys\ndata = sys.stdin.read().split()\nif data:\n    t = int(data[0])\n    for i in range(t):\n        s = int(data[1 + 2*i]) + int(data[2 + 2*i])\n        print('overflow' if len(str(s)) > 80 else s)",
+    "problem_id_a": 16,
+    "problem_id_b": 16,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_48",
+    "code_a": "while True:\n    try:\n        n = int(input())\n        count = sum(1 for a in range(10) for b in range(10) for c in range(10) for d in range(10) if a+b+c+d == n)\n        print(count)\n    except:\n        break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    orig = line.strip()\n    for k in range(26):\n        trans = orig.translate(str.maketrans('abcdefghijklmnopqrstuvwxyz', ''.join(chr((i + k) % 26 + 97) for i in range(26))))\n        if 'the' in trans or 'this' in trans or 'that' in trans:\n            print(trans)\n            break",
+    "problem_id_a": 9,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_9_1",
+    "code_a": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(10):\n        for b in range(10):\n            for c in range(10):\n                for d in range(10):\n                    if a + b + c + d == n:\n                        ans += 1\n    print(ans)",
+    "code_b": "while True:\n    try:\n        n = int(input())\n        count = sum(1 for a in range(10) for b in range(10) for c in range(10) for d in range(10) if a+b+c+d == n)\n        print(count)\n    except:\n        break",
+    "problem_id_a": 9,
+    "problem_id_b": 9,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_18_4",
+    "code_a": "import sys\nfor l in sys.stdin:\n    str_in = l.strip()\n    for rot in range(26):\n        out = ''.join(chr((ord(c) - 97 + rot) % 26 + 97) if 'a' <= c <= 'z' else c for c in str_in)\n        if 'the' in out or 'this' in out or 'that' in out:\n            print(out)\n            break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    orig = line.strip()\n    for k in range(26):\n        trans = orig.translate(str.maketrans('abcdefghijklmnopqrstuvwxyz', ''.join(chr((i + k) % 26 + 97) for i in range(26))))\n        if 'the' in trans or 'this' in trans or 'that' in trans:\n            print(trans)\n            break",
+    "problem_id_a": 18,
+    "problem_id_b": 18,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_16_5",
+    "code_a": "import sys\ndata = sys.stdin.read().split()\nif data:\n    t = int(data[0])\n    for i in range(t):\n        s = int(data[1 + 2*i]) + int(data[2 + 2*i])\n        print('overflow' if len(str(s)) > 80 else s)",
+    "code_b": "n = int(input())\nfor i in range(n):\n    v1 = int(input())\n    v2 = int(input())\n    tot = str(v1 + v2)\n    print('overflow' if len(tot) > 80 else tot)",
+    "problem_id_a": 16,
+    "problem_id_b": 16,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_18_3",
+    "code_a": "import sys\nfor line in sys.stdin:\n    line = line.strip()\n    for i in range(26):\n        s = ''\n        for c in line:\n            s += chr((ord(c)-97+i)%26+97) if 'a'<=c<='z' else c\n        if any(w in s for w in ['the', 'this', 'that']):\n            print(s)\n            break",
+    "code_b": "import sys\nfor l in sys.stdin:\n    str_in = l.strip()\n    for rot in range(26):\n        out = ''.join(chr((ord(c) - 97 + rot) % 26 + 97) if 'a' <= c <= 'z' else c for c in str_in)\n        if 'the' in out or 'this' in out or 'that' in out:\n            print(out)\n            break",
+    "problem_id_a": 18,
+    "problem_id_b": 18,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_22",
+    "code_a": "import sys\nlines = [int(line) for line in sys.stdin]\nlines.sort()\nfor val in lines[-1:-4:-1]:\n    print(val)",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor i in range(0, len(lines), 2):\n    x, y = int(lines[i]), int(lines[i+1])\n    import math\n    g = math.gcd(x, y)\n    print(g, x * y // g)",
+    "problem_id_a": 2,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_11",
+    "code_a": "import math\nweeks = int(input())\ncapital = 100000\nfor _ in range(weeks):\n    capital = int(math.ceil(capital * 1.05 / 1000.0) * 1000)\nprint(capital)",
+    "code_b": "print(input()[::-1])",
+    "problem_id_a": 8,
+    "problem_id_b": 7,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_39_4",
+    "code_a": "import sys\nfor line in sys.stdin:\n    cards = list(map(int, line.split(',')))\n    cards.sort()\n    from collections import Counter\n    freq = Counter(cards)\n    mc = freq.most_common()\n    is_str = (len(freq) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n    if mc[0][1] == 4: print('four card')\n    elif mc[0][1] == 3 and mc[1][1] == 2: print('full house')\n    elif is_str: print('straight')\n    elif mc[0][1] == 3: print('three card')\n    elif mc[0][1] == 2 and mc[1][1] == 2: print('two pair')\n    elif mc[0][1] == 2: print('one pair')\n    else: print('null')",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    c = sorted(map(int, s.split(',')))\n    u = set(c)\n    st = (len(u) == 5 and c[4] - c[0] == 4) or c == [1, 10, 11, 12, 13]\n    counts = sorted([c.count(x) for x in u], reverse=True)\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif st: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+    "problem_id_a": 39,
+    "problem_id_b": 39,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_20",
+    "code_a": "for _ in range(int(input())):\n    num1 = int(input())\n    num2 = int(input())\n    res = num1 + num2\n    print(res if len(str(res)) <= 80 else 'overflow')",
+    "code_b": "import sys\nfor line in sys.stdin.read().splitlines():\n    if not line.strip(): continue\n    hand = sorted(list(map(int, line.split(','))))\n    c = {}\n    for card in hand: c[card] = c.get(card, 0) + 1\n    vals = sorted(c.values(), reverse=True)\n    st = (len(c) == 5 and hand[4] - hand[0] == 4) or hand == [1,10,11,12,13]\n    if vals == [4,1]: print('four card')\n    elif vals == [3,2]: print('full house')\n    elif st: print('straight')\n    elif vals == [3,1,1]: print('three card')\n    elif vals == [2,2,1]: print('two pair')\n    elif vals == [2,1,1,1]: print('one pair')\n    else: print('null')",
+    "problem_id_a": 16,
+    "problem_id_b": 39,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_23",
+    "code_a": "import sys\ntext = sys.stdin.readline().rstrip('\\r\\n')\nprint(text[::-1])",
+    "code_b": "n = int(input())\nfor _ in range(n):\n    a = int(input())\n    b = int(input())\n    s = a + b\n    if len(str(s)) > 80:\n        print('overflow')\n    else:\n        print(s)",
+    "problem_id_a": 7,
+    "problem_id_b": 16,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_13",
+    "code_a": "while True:\n    try:\n        d = int(input())\n        area = 0\n        for x in range(d, 600, d):\n            area += (x**2) * d\n        print(area)\n    except:\n        break",
+    "code_b": "lst = []\nfor i in range(10):\n    lst.append(int(input()))\nsorted_lst = sorted(lst, reverse=True)\nfor item in sorted_lst[:3]:\n    print(item)",
+    "problem_id_a": 15,
+    "problem_id_b": 2,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_28_3",
+    "code_a": "import sys\ndays_in_months = [0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]\nname = ['Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    day_count = sum(days_in_months[:m]) + d - 1\n    print(name[day_count % 7])",
+    "code_b": "import sys, datetime\nnames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    print(names[datetime.date(2004, m, d).weekday()])",
+    "problem_id_a": 28,
+    "problem_id_b": 28,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_26",
+    "code_a": "import sys\ndata = [int(x) for x in sys.stdin.read().split()]\ndata.sort(reverse=True)\nprint(data[0])\nprint(data[1])\nprint(data[2])",
+    "code_b": "def calc_gcd(m, n):\n    return m if n == 0 else calc_gcd(n, m % n)\nimport sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = calc_gcd(a, b)\n    print(g, (a * b) // g)",
+    "problem_id_a": 2,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_28_5",
+    "code_a": "import sys\nfor line in sys.stdin:\n    month, day = map(int, line.split())\n    if month == 0: break\n    import datetime\n    w = datetime.date(2004, month, day).strftime('%A')\n    print(w)",
+    "code_b": "while True:\n    m, d = map(int, input().split())\n    if m == 0: break\n    import datetime\n    print(datetime.date(2004, m, d).strftime('%A'))",
+    "problem_id_a": 28,
+    "problem_id_b": 28,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_15_3",
+    "code_a": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "code_b": "import sys\nfor l in sys.stdin.read().split():\n    d = int(l)\n    res = 0\n    for i in range(1, 600 // d):\n        res += (i * d)**2 * d\n    print(res)",
+    "problem_id_a": 15,
+    "problem_id_b": 15,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_8_4",
+    "code_a": "import math\nweeks = int(input())\ncapital = 100000\nfor _ in range(weeks):\n    capital = int(math.ceil(capital * 1.05 / 1000.0) * 1000)\nprint(capital)",
+    "code_b": "n = int(input())\nd = 100000\nfor _ in range(n):\n    d = int(d * 1.05)\n    if d % 1000:\n        d = (d // 1000 + 1) * 1000\nprint(d)",
+    "problem_id_a": 8,
+    "problem_id_b": 8,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_15_5",
+    "code_a": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "code_b": "while True:\n    try:\n        dx = int(input())\n        total = 0\n        for i in range(1, 600 // dx):\n            total += (i * dx) ** 2 * dx\n        print(total)\n    except EOFError:\n        break",
+    "problem_id_a": 15,
+    "problem_id_b": 15,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_1",
+    "code_a": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "code_b": "while True:\n    try:\n        cards = sorted(map(int, input().split(',')))\n        import collections\n        counts = sorted(collections.Counter(cards).values(), reverse=True)\n        straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n        if counts == [4, 1]: print('four card')\n        elif counts == [3, 2]: print('full house')\n        elif straight: print('straight')\n        elif counts == [3, 1, 1]: print('three card')\n        elif counts == [2, 2, 1]: print('two pair')\n        elif counts == [2, 1, 1, 1]: print('one pair')\n        else: print('null')\n    except:\n        break",
+    "problem_id_a": 15,
+    "problem_id_b": 39,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_8_2",
+    "code_a": "import math\nn = int(input())\namount = 100000\nfor i in range(n):\n    amount += amount * 0.05\n    amount = math.ceil(amount / 1000.0) * 1000\nprint(int(amount))",
+    "code_b": "weeks = int(input())\nval = 100000\nfor w in range(weeks):\n    val = int(val * 1.05)\n    rem = val % 1000\n    if rem > 0:\n        val += (1000 - rem)\nprint(val)",
+    "problem_id_a": 8,
+    "problem_id_b": 8,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_28",
+    "code_a": "import sys\nfor _ in range(int(sys.stdin.readline())):\n    x = int(sys.stdin.readline())\n    y = int(sys.stdin.readline())\n    ans = x + y\n    print(ans if len(str(ans)) <= 80 else 'overflow')",
+    "code_b": "s = input()\nprint(s[::-1])",
+    "problem_id_a": 16,
+    "problem_id_b": 7,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_2_1",
+    "code_a": "heights = [int(input()) for _ in range(10)]\nheights.sort(reverse=True)\nfor h in heights[:3]:\n    print(h)",
+    "code_b": "import sys\nlines = [int(line) for line in sys.stdin]\nlines.sort()\nfor val in lines[-1:-4:-1]:\n    print(val)",
+    "problem_id_a": 2,
+    "problem_id_b": 2,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_32",
+    "code_a": "import sys\nfor line in sys.stdin:\n    print(line.strip()[::-1])",
+    "code_b": "import sys\nfor line in sys.stdin:\n    month, day = map(int, line.split())\n    if month == 0: break\n    import datetime\n    w = datetime.date(2004, month, day).strftime('%A')\n    print(w)",
+    "problem_id_a": 7,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_7_1",
+    "code_a": "s = input()\nprint(s[::-1])",
+    "code_b": "import sys\ns = sys.stdin.read().strip()\nprint(''.join(reversed(s)))",
+    "problem_id_a": 7,
+    "problem_id_b": 7,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_2_4",
+    "code_a": "h = []\nfor _ in range(10):\n    h.append(int(input()))\nh.sort(reverse=True)\nprint(*h[:3], sep='\\n')",
+    "code_b": "import heapq\nnums = [int(input()) for _ in range(10)]\nfor x in heapq.nlargest(3, nums):\n    print(x)",
+    "problem_id_a": 2,
+    "problem_id_b": 2,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_30",
+    "code_a": "while True:\n    m, d = map(int, input().split())\n    if m == 0: break\n    import datetime\n    print(datetime.date(2004, m, d).strftime('%A'))",
+    "code_b": "while True:\n    try:\n        a, b = map(int, input().split())\n        x, y = a, b\n        while y != 0:\n            x, y = y, x % y\n        print(x, (a * b) // x)\n    except:\n        break",
+    "problem_id_a": 28,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_15_1",
+    "code_a": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    ans = sum((i * d)**2 * d for i in range(1, 600 // d))\n    print(ans)",
+    "code_b": "while True:\n    try:\n        d = int(input())\n        area = 0\n        for x in range(d, 600, d):\n            area += (x**2) * d\n        print(area)\n    except:\n        break",
+    "problem_id_a": 15,
+    "problem_id_b": 15,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_49",
+    "code_a": "import sys\ns = sys.stdin.read().strip()\nprint(''.join(reversed(s)))",
+    "code_b": "import sys\nfor l in sys.stdin:\n    str_in = l.strip()\n    for rot in range(26):\n        out = ''.join(chr((ord(c) - 97 + rot) % 26 + 97) if 'a' <= c <= 'z' else c for c in str_in)\n        if 'the' in out or 'this' in out or 'that' in out:\n            print(out)\n            break",
+    "problem_id_a": 7,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_50",
+    "code_a": "n = int(input())\nfor _ in range(n):\n    a = int(input())\n    b = int(input())\n    s = a + b\n    if len(str(s)) > 80:\n        print('overflow')\n    else:\n        print(s)",
+    "code_b": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+    "problem_id_a": 16,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_16",
+    "code_a": "while True:\n    try:\n        dx = int(input())\n        total = 0\n        for i in range(1, 600 // dx):\n            total += (i * dx) ** 2 * dx\n        print(total)\n    except EOFError:\n        break",
+    "code_b": "import math\nweeks = int(input())\ncapital = 100000\nfor _ in range(weeks):\n    capital = int(math.ceil(capital * 1.05 / 1000.0) * 1000)\nprint(capital)",
+    "problem_id_a": 15,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_24",
+    "code_a": "import sys\ndata = sys.stdin.read().split()\nif data:\n    t = int(data[0])\n    for i in range(t):\n        s = int(data[1 + 2*i]) + int(data[2 + 2*i])\n        print('overflow' if len(str(s)) > 80 else s)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    cards = list(map(int, line.split(',')))\n    cards.sort()\n    from collections import Counter\n    freq = Counter(cards)\n    mc = freq.most_common()\n    is_str = (len(freq) == 5 and cards[4] - cards[0] == 4) or cards == [1, 10, 11, 12, 13]\n    if mc[0][1] == 4: print('four card')\n    elif mc[0][1] == 3 and mc[1][1] == 2: print('full house')\n    elif is_str: print('straight')\n    elif mc[0][1] == 3: print('three card')\n    elif mc[0][1] == 2 and mc[1][1] == 2: print('two pair')\n    elif mc[0][1] == 2: print('one pair')\n    else: print('null')",
+    "problem_id_a": 16,
+    "problem_id_b": 39,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_46",
+    "code_a": "heights = [int(input()) for _ in range(10)]\nheights.sort(reverse=True)\nfor h in heights[:3]:\n    print(h)",
+    "code_b": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+    "problem_id_a": 2,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_9_2",
+    "code_a": "while True:\n    try:\n        n = int(input())\n        count = sum(1 for a in range(10) for b in range(10) for c in range(10) for d in range(10) if a+b+c+d == n)\n        print(count)\n    except:\n        break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    target = int(line)\n    c = 0\n    for a in range(10):\n        for b in range(10):\n            for d in range(10):\n                e = target - (a + b + d)\n                if 0 <= e <= 9:\n                    c += 1\n    print(c)",
+    "problem_id_a": 9,
+    "problem_id_b": 9,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_16_1",
+    "code_a": "n = int(input())\nfor _ in range(n):\n    a = int(input())\n    b = int(input())\n    s = a + b\n    if len(str(s)) > 80:\n        print('overflow')\n    else:\n        print(s)",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nif lines:\n    n = int(lines[0])\n    idx = 1\n    for _ in range(n):\n        a, b = int(lines[idx]), int(lines[idx+1])\n        idx += 2\n        val = a + b\n        print(val if len(str(val)) <= 80 else 'overflow')",
+    "problem_id_a": 16,
+    "problem_id_b": 16,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_7_2",
+    "code_a": "import sys\ns = sys.stdin.read().strip()\nprint(''.join(reversed(s)))",
+    "code_b": "s = input()\nres = ''\nfor char in s:\n    res = char + res\nprint(res)",
+    "problem_id_a": 7,
+    "problem_id_b": 7,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_2_2",
+    "code_a": "import sys\nlines = [int(line) for line in sys.stdin]\nlines.sort()\nfor val in lines[-1:-4:-1]:\n    print(val)",
+    "code_b": "a = [int(input()) for i in range(10)]\na.sort()\nprint(a[-1])\nprint(a[-2])\nprint(a[-3])",
+    "problem_id_a": 2,
+    "problem_id_b": 2,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_43",
+    "code_a": "import sys\ndef gcd(x, y):\n    while y:\n        x, y = y, x % y\n    return x\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = gcd(a, b)\n    print(g, (a * b) // g)",
+    "code_b": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+    "problem_id_a": 6,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_39",
+    "code_a": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(min(10, n + 1)):\n        for b in range(min(10, n - a + 1)):\n            for c in range(min(10, n - a - b + 1)):\n                if 0 <= n - a - b - c <= 9:\n                    ans += 1\n    print(ans)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    month, day = map(int, line.split())\n    if month == 0: break\n    import datetime\n    w = datetime.date(2004, month, day).strftime('%A')\n    print(w)",
+    "problem_id_a": 9,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_21",
+    "code_a": "print(input()[::-1])",
+    "code_b": "import datetime, sys\ndays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    dt = datetime.date(2004, m, d)\n    print(days[dt.weekday()])",
+    "problem_id_a": 7,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_7",
+    "code_a": "while True:\n    try:\n        a, b = map(int, input().split())\n        x, y = a, b\n        while y != 0:\n            x, y = y, x % y\n        print(x, (a * b) // x)\n    except:\n        break",
+    "code_b": "import sys\nfor _ in range(int(sys.stdin.readline())):\n    x = int(sys.stdin.readline())\n    y = int(sys.stdin.readline())\n    ans = x + y\n    print(ans if len(str(ans)) <= 80 else 'overflow')",
+    "problem_id_a": 6,
+    "problem_id_b": 16,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_6_5",
+    "code_a": "def calc_gcd(m, n):\n    return m if n == 0 else calc_gcd(n, m % n)\nimport sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = calc_gcd(a, b)\n    print(g, (a * b) // g)",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor i in range(0, len(lines), 2):\n    x, y = int(lines[i]), int(lines[i+1])\n    import math\n    g = math.gcd(x, y)\n    print(g, x * y // g)",
+    "problem_id_a": 6,
+    "problem_id_b": 6,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_41",
+    "code_a": "import math\nweeks = int(input())\ncapital = 100000\nfor _ in range(weeks):\n    capital = int(math.ceil(capital * 1.05 / 1000.0) * 1000)\nprint(capital)",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    v = int(s)\n    c = 0\n    for a in range(10):\n        for b in range(10):\n            for cc in range(10):\n                if 0 <= v - a - b - cc <= 9:\n                    c += 1\n    print(c)",
+    "problem_id_a": 8,
+    "problem_id_b": 9,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_45",
+    "code_a": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+    "code_b": "import sys\nfrom collections import Counter\nfor line in sys.stdin:\n    cards = sorted(map(int, line.split(',')))\n    counts = sorted(Counter(cards).values(), reverse=True)\n    is_straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or (cards == [1, 10, 11, 12, 13])\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif is_straight: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+    "problem_id_a": 8,
+    "problem_id_b": 39,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_18_1",
+    "code_a": "import sys\nfor line in sys.stdin:\n    s = line.strip()\n    for shift in range(26):\n        dec = ''\n        for c in s:\n            if 'a' <= c <= 'z':\n                dec += chr((ord(c) - ord('a') + shift) % 26 + ord('a'))\n            else:\n                dec += c\n        if 'the' in dec or 'this' in dec or 'that' in dec:\n            print(dec)\n            break",
+    "code_b": "import sys\ndef decrypt(text, k):\n    res = []\n    for ch in text:\n        if 'a' <= ch <= 'z':\n            res.append(chr((ord(ch) - ord('a') + k) % 26 + ord('a')))\n        else:\n            res.append(ch)\n    return ''.join(res)\nfor line in sys.stdin:\n    txt = line.rstrip('\\r\\n')\n    for shift in range(26):\n        cand = decrypt(txt, shift)\n        if 'the' in cand or 'this' in cand or 'that' in cand:\n            print(cand)\n            break",
+    "problem_id_a": 18,
+    "problem_id_b": 18,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_9_4",
+    "code_a": "import sys\nfor l in sys.stdin:\n    n = int(l)\n    cnt = 0\n    for i in range(10):\n        for j in range(10):\n            for k in range(10):\n                m = n - i - j - k\n                if 0 <= m <= 9: cnt += 1\n    print(cnt)",
+    "code_b": "while True:\n    try:\n        target = int(input())\n        res = sum(1 for i in range(10) for j in range(10) for k in range(10) for l in range(10) if i+j+k+l == target)\n        print(res)\n    except EOFError:\n        break",
+    "problem_id_a": 9,
+    "problem_id_b": 9,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_47",
+    "code_a": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "code_b": "import sys\ndef gcd(x, y):\n    while y:\n        x, y = y, x % y\n    return x\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = gcd(a, b)\n    print(g, (a * b) // g)",
+    "problem_id_a": 15,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_8_3",
+    "code_a": "weeks = int(input())\nval = 100000\nfor w in range(weeks):\n    val = int(val * 1.05)\n    rem = val % 1000\n    if rem > 0:\n        val += (1000 - rem)\nprint(val)",
+    "code_b": "import math\nweeks = int(input())\ncapital = 100000\nfor _ in range(weeks):\n    capital = int(math.ceil(capital * 1.05 / 1000.0) * 1000)\nprint(capital)",
+    "problem_id_a": 8,
+    "problem_id_b": 8,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_8",
+    "code_a": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "code_b": "s = input()\nres = ''\nfor char in s:\n    res = char + res\nprint(res)",
+    "problem_id_a": 15,
+    "problem_id_b": 7,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_19",
+    "code_a": "while True:\n    m, d = map(int, input().split())\n    if m == 0: break\n    import datetime\n    print(datetime.date(2004, m, d).strftime('%A'))",
+    "code_b": "while True:\n    try:\n        target = int(input())\n        res = sum(1 for i in range(10) for j in range(10) for k in range(10) for l in range(10) if i+j+k+l == target)\n        print(res)\n    except EOFError:\n        break",
+    "problem_id_a": 28,
+    "problem_id_b": 9,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_40",
+    "code_a": "import sys\ndata = sys.stdin.read().split()\nif data:\n    t = int(data[0])\n    for i in range(t):\n        s = int(data[1 + 2*i]) + int(data[2 + 2*i])\n        print('overflow' if len(str(s)) > 80 else s)",
+    "code_b": "w = int(input())\nans = 100000\nfor _ in range(w):\n    ans *= 1.05\n    if ans % 1000 != 0:\n        ans = (int(ans // 1000) + 1) * 1000\nprint(int(ans))",
+    "problem_id_a": 16,
+    "problem_id_b": 8,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_9_5",
+    "code_a": "while True:\n    try:\n        target = int(input())\n        res = sum(1 for i in range(10) for j in range(10) for k in range(10) for l in range(10) if i+j+k+l == target)\n        print(res)\n    except EOFError:\n        break",
+    "code_b": "import sys\nlines = sys.stdin.read().split()\nfor s in lines:\n    v = int(s)\n    c = 0\n    for a in range(10):\n        for b in range(10):\n            for cc in range(10):\n                if 0 <= v - a - b - cc <= 9:\n                    c += 1\n    print(c)",
+    "problem_id_a": 9,
+    "problem_id_b": 9,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_16_2",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nif lines:\n    n = int(lines[0])\n    idx = 1\n    for _ in range(n):\n        a, b = int(lines[idx]), int(lines[idx+1])\n        idx += 2\n        val = a + b\n        print(val if len(str(val)) <= 80 else 'overflow')",
+    "code_b": "for _ in range(int(input())):\n    num1 = int(input())\n    num2 = int(input())\n    res = num1 + num2\n    print(res if len(str(res)) <= 80 else 'overflow')",
+    "problem_id_a": 16,
+    "problem_id_b": 16,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_7_4",
+    "code_a": "print(input()[::-1])",
+    "code_b": "import sys\ntext = sys.stdin.readline().rstrip('\\r\\n')\nprint(text[::-1])",
+    "problem_id_a": 7,
+    "problem_id_b": 7,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_28_4",
+    "code_a": "import sys, datetime\nnames = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    print(names[datetime.date(2004, m, d).weekday()])",
+    "code_b": "import sys\nfor line in sys.stdin:\n    month, day = map(int, line.split())\n    if month == 0: break\n    import datetime\n    w = datetime.date(2004, month, day).strftime('%A')\n    print(w)",
+    "problem_id_a": 28,
+    "problem_id_b": 28,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_2",
+    "code_a": "import heapq\nnums = [int(input()) for _ in range(10)]\nfor x in heapq.nlargest(3, nums):\n    print(x)",
+    "code_b": "import sys\nfor line in sys.stdin:\n    s = line.strip()\n    for shift in range(26):\n        dec = ''\n        for c in s:\n            if 'a' <= c <= 'z':\n                dec += chr((ord(c) - ord('a') + shift) % 26 + ord('a'))\n            else:\n                dec += c\n        if 'the' in dec or 'this' in dec or 'that' in dec:\n            print(dec)\n            break",
+    "problem_id_a": 2,
+    "problem_id_b": 18,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_6_3",
+    "code_a": "while True:\n    try:\n        a, b = map(int, input().split())\n        x, y = a, b\n        while y != 0:\n            x, y = y, x % y\n        print(x, (a * b) // x)\n    except:\n        break",
+    "code_b": "import math, sys\nfor l in sys.stdin:\n    u, v = map(int, l.split())\n    gc = math.gcd(u, v)\n    lc = u * v // gc\n    print(f'{gc} {lc}')",
+    "problem_id_a": 6,
+    "problem_id_b": 6,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_pos_7_3",
+    "code_a": "s = input()\nres = ''\nfor char in s:\n    res = char + res\nprint(res)",
+    "code_b": "print(input()[::-1])",
+    "problem_id_a": 7,
+    "problem_id_b": 7,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_33",
+    "code_a": "h = []\nfor _ in range(10):\n    h.append(int(input()))\nh.sort(reverse=True)\nprint(*h[:3], sep='\\n')",
+    "code_b": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    ans = sum((i * d)**2 * d for i in range(1, 600 // d))\n    print(ans)",
+    "problem_id_a": 2,
+    "problem_id_b": 15,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_34",
+    "code_a": "while True:\n    try:\n        n1, n2 = map(int, input().split())\n        import math\n        g = math.gcd(n1, n2)\n        print(g, n1 * n2 // g)\n    except EOFError:\n        break",
+    "code_b": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    s = 0\n    x = d\n    while x < 600:\n        s += x * x * d\n        x += d\n    print(s)",
+    "problem_id_a": 6,
+    "problem_id_b": 15,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_37",
+    "code_a": "while True:\n    try:\n        n1, n2 = map(int, input().split())\n        import math\n        g = math.gcd(n1, n2)\n        print(g, n1 * n2 // g)\n    except EOFError:\n        break",
+    "code_b": "import datetime, sys\nweek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nlines = sys.stdin.read().split()\ni = 0\nwhile i < len(lines):\n    m, d = int(lines[i]), int(lines[i+1])\n    if m == 0: break\n    i += 2\n    print(week[datetime.date(2004, m, d).weekday()])",
+    "problem_id_a": 6,
+    "problem_id_b": 28,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_6_2",
+    "code_a": "import sys\ndef gcd(x, y):\n    while y:\n        x, y = y, x % y\n    return x\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = gcd(a, b)\n    print(g, (a * b) // g)",
+    "code_b": "while True:\n    try:\n        a, b = map(int, input().split())\n        x, y = a, b\n        while y != 0:\n            x, y = y, x % y\n        print(x, (a * b) // x)\n    except:\n        break",
+    "problem_id_a": 6,
+    "problem_id_b": 6,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_44",
+    "code_a": "import sys\nfor line in sys.stdin:\n    step = int(line)\n    print(sum((x**2)*step for x in range(step, 600, step)))",
+    "code_b": "import heapq\nnums = [int(input()) for _ in range(10)]\nfor x in heapq.nlargest(3, nums):\n    print(x)",
+    "problem_id_a": 15,
+    "problem_id_b": 2,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_10",
+    "code_a": "def calc_gcd(m, n):\n    return m if n == 0 else calc_gcd(n, m % n)\nimport sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = calc_gcd(a, b)\n    print(g, (a * b) // g)",
+    "code_b": "string = str(input())\nrev = ''\nfor i in range(len(string)-1, -1, -1):\n    rev += string[i]\nprint(rev)",
+    "problem_id_a": 6,
+    "problem_id_b": 7,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_3",
+    "code_a": "import sys\ndata = sys.stdin.read().split()\nif data:\n    t = int(data[0])\n    for i in range(t):\n        s = int(data[1 + 2*i]) + int(data[2 + 2*i])\n        print('overflow' if len(str(s)) > 80 else s)",
+    "code_b": "while True:\n    try:\n        a, b = map(int, input().split())\n        x, y = a, b\n        while y != 0:\n            x, y = y, x % y\n        print(x, (a * b) // x)\n    except:\n        break",
+    "problem_id_a": 16,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_5",
+    "code_a": "import sys\nlines = sys.stdin.read().split()\nfor i in range(0, len(lines), 2):\n    x, y = int(lines[i]), int(lines[i+1])\n    import math\n    g = math.gcd(x, y)\n    print(g, x * y // g)",
+    "code_b": "import sys\nlines = [int(line) for line in sys.stdin]\nlines.sort()\nfor val in lines[-1:-4:-1]:\n    print(val)",
+    "problem_id_a": 6,
+    "problem_id_b": 2,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_pos_39_1",
+    "code_a": "import sys\nfrom collections import Counter\nfor line in sys.stdin:\n    cards = sorted(map(int, line.split(',')))\n    counts = sorted(Counter(cards).values(), reverse=True)\n    is_straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or (cards == [1, 10, 11, 12, 13])\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif is_straight: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+    "code_b": "import sys\nfor line in sys.stdin.read().splitlines():\n    if not line.strip(): continue\n    hand = sorted(list(map(int, line.split(','))))\n    c = {}\n    for card in hand: c[card] = c.get(card, 0) + 1\n    vals = sorted(c.values(), reverse=True)\n    st = (len(c) == 5 and hand[4] - hand[0] == 4) or hand == [1,10,11,12,13]\n    if vals == [4,1]: print('four card')\n    elif vals == [3,2]: print('full house')\n    elif st: print('straight')\n    elif vals == [3,1,1]: print('three card')\n    elif vals == [2,2,1]: print('two pair')\n    elif vals == [2,1,1,1]: print('one pair')\n    else: print('null')",
+    "problem_id_a": 39,
+    "problem_id_b": 39,
+    "label": 1,
+    "category": "same_problem_functionally_related"
+  },
+  {
+    "pair_id": "codenet_neg_6",
+    "code_a": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(min(10, n + 1)):\n        for b in range(min(10, n - a + 1)):\n            for c in range(min(10, n - a - b + 1)):\n                if 0 <= n - a - b - c <= 9:\n                    ans += 1\n    print(ans)",
+    "code_b": "import sys\ndef gcd(x, y):\n    while y:\n        x, y = y, x % y\n    return x\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = gcd(a, b)\n    print(g, (a * b) // g)",
+    "problem_id_a": 9,
+    "problem_id_b": 6,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  },
+  {
+    "pair_id": "codenet_neg_35",
+    "code_a": "import math\nn = int(input())\namount = 100000\nfor i in range(n):\n    amount += amount * 0.05\n    amount = math.ceil(amount / 1000.0) * 1000\nprint(int(amount))",
+    "code_b": "import heapq\nnums = [int(input()) for _ in range(10)]\nfor x in heapq.nlargest(3, nums):\n    print(x)",
+    "problem_id_a": 8,
+    "problem_id_b": 2,
+    "label": 0,
+    "category": "different_problem_unrelated"
+  }
+]

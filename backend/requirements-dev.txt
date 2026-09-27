@@ -1,0 +1,11 @@
+# Development-only tools — NOT needed at runtime.
+# Install with:  pip install -r requirements-dev.txt
+#
+# These are intentionally separate from requirements.txt so the Docker image
+# stays lean (runtime image only installs requirements.txt).
+
+# Code formatting (section 6 of INSTRUCTIONS.md)
+black>=24.0.0
+
+# Linting (section 6 of INSTRUCTIONS.md)
+ruff>=0.4.0

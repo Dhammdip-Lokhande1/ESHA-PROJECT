@@ -1,0 +1,17 @@
+{
+  "pair_id": "P003_UNREL",
+  "source_program_id": "P003",
+  "domain": "Sorting Algorithms",
+  "category": "unrelated",
+  "label": 0,
+  "language": "python",
+  "source_type": "internal_synthetic",
+  "source_dataset": "EHSA_Benchmark_v1",
+  "transformation_type": "unrelated",
+  "transformation_description": "Unrelated computational task (Binary Search)",
+  "behavior_preserved": false,
+  "validation_status": "n/a (unrelated)",
+  "fold": 1,
+  "license": "MIT",
+  "provenance": "EHSA Research Team controlled synthetic generation"
+}

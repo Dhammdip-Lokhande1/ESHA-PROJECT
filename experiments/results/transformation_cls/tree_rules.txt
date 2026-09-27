@@ -1,0 +1,30 @@
+# DecisionTree (max_depth=4) Classification Rules
+
+|--- structural <= 0.55
+|   |--- lexical <= 0.23
+|   |   |--- class: unrelated
+|   |--- lexical >  0.23
+|   |   |--- structural <= 0.28
+|   |   |   |--- class: structural_refactoring
+|   |   |--- structural >  0.28
+|   |   |   |--- class: unrelated
+|--- structural >  0.55
+|   |--- lexical <= 0.99
+|   |   |--- lexical <= 0.60
+|   |   |   |--- structural <= 0.93
+|   |   |   |   |--- class: unrelated
+|   |   |   |--- structural >  0.93
+|   |   |   |   |--- class: variable_renaming
+|   |   |--- lexical >  0.60
+|   |   |   |--- lexical <= 0.66
+|   |   |   |   |--- class: structural_refactoring
+|   |   |   |--- lexical >  0.66
+|   |   |   |   |--- class: structural_refactoring
+|   |--- lexical >  0.99
+|   |   |--- semantic <= 0.97
+|   |   |   |--- semantic <= 0.39
+|   |   |   |   |--- class: structural_refactoring
+|   |   |   |--- semantic >  0.39
+|   |   |   |   |--- class: exact_copy
+|   |   |--- semantic >  0.97
+|   |   |   |--- class: structural_refactoring

@@ -1,0 +1,8 @@
+Ground_Truth_7Family,exact_copy,structural_refactoring,unrelated,variable_renaming
+formatting_change,28,2,0,0
+variable_renaming,0,2,0,28
+structural_refactoring,0,29,0,1
+dead_code_insertion,0,30,0,0
+combined,0,0,0,30
+easy_negative,0,0,0,0
+hard_negative,0,0,0,0

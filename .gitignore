@@ -1,0 +1,98 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+*.egg
+pip-wheel-metadata/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+.hypothesis/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# WeasyPrint / PDF artifacts
+*.pdf
+
+# Model caches (HuggingFace)
+.cache/
+backend/app/model_cache/
+
+# Secrets
+secrets.json
+
+# Private Academic & Thesis Submission Documents (DO NOT TRACK IN PUBLIC GITHUB)
+Project Thesis1/
+Project Thesis1.zip
+*.docx
+*.doc
+
+# Internal Audit & Viva Preparation Documents (Keep Local / Private)
+archive/
+scratch/
+PROJECT_AUDIT_REPORT.md
+PROJECT_AUDIT_VERIFICATION.md
+PROJECT_VERIFIED_BASELINE.md
+PROJECT_BRIEF.md
+THESIS_MASTER_INFORMATION.md
+EHSA_150_180_RECONCILIATION_AUDIT.md
+EHSA_ABLATION_FORENSIC_AUDIT.md
+EHSA_COMPLETE_PROJECT_KNOWLEDGE_BASE.md
+EHSA_COMPLETE_PROJECT_RESEARCH_EVIDENCE.md
+EHSA_FINAL_ABLATION_AND_RESEARCH_EVALUATION_REPORT.md
+EHSA_FINAL_NUMERICAL_MASTER.md
+EHSA_FINAL_PAPER_CLAIM_AUDIT.md
+EHSA_FINAL_PAPER_NUMERICAL_CONSISTENCY_AUDIT.md
+EHSA_LITERATURE_REVIEW.md
+EHSA_METHODOLOGY.md
+EHSA_METRIC_RECONCILIATION_AUDIT.md
+EHSA_RESEARCH_EVIDENCE_MASTER.md
+EHSA_RESEARCH_INTEGRITY_AUDIT.md
+EHSA_THESIS_INFORMATION_BASE.md
+EHSA_VIVA_PREPARATION.md
+docs/PROJECT_CLEANUP_AUDIT_REPORT.md
+
+

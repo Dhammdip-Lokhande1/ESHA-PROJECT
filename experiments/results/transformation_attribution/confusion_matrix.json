@@ -1,0 +1,37 @@
+{
+  "exact_copy": {
+    "exact_copy": 30,
+    "partial_match": 0,
+    "structural_refactoring": 0,
+    "unrelated": 0,
+    "variable_renaming": 0
+  },
+  "partial_match": {
+    "exact_copy": 0,
+    "partial_match": 0,
+    "structural_refactoring": 0,
+    "unrelated": 0,
+    "variable_renaming": 0
+  },
+  "structural_refactoring": {
+    "exact_copy": 21,
+    "partial_match": 4,
+    "structural_refactoring": 34,
+    "variable_renaming": 31,
+    "unrelated": 0
+  },
+  "unrelated": {
+    "unrelated": 32,
+    "partial_match": 17,
+    "structural_refactoring": 11,
+    "exact_copy": 0,
+    "variable_renaming": 0
+  },
+  "variable_renaming": {
+    "variable_renaming": 30,
+    "exact_copy": 0,
+    "partial_match": 0,
+    "structural_refactoring": 0,
+    "unrelated": 0
+  }
+}

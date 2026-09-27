@@ -1,0 +1,502 @@
+{
+  "EHSA_Synth_180": {
+    "benchmark": "EHSA-Synth (with hard negatives)",
+    "methods": {
+      "EHSA Multi-View Fusion": {
+        "n_samples": 180,
+        "n_positives": 120,
+        "n_negatives": 60,
+        "tp": 112,
+        "fp": 23,
+        "fn": 8,
+        "tn": 37,
+        "precision": 0.8296,
+        "recall": 0.9333,
+        "f1_score": 0.8784,
+        "mcc": 0.5988,
+        "balanced_accuracy": 0.775,
+        "accuracy": 0.8278,
+        "roc_auc": 0.8881,
+        "f1_ci_95": [
+          0.8377,
+          0.9587
+        ],
+        "auc_ci_95": [
+          0.7871,
+          0.9776
+        ]
+      },
+      "Semantic-Only (UniXcoder)": {
+        "n_samples": 180,
+        "n_positives": 120,
+        "n_negatives": 60,
+        "tp": 113,
+        "fp": 23,
+        "fn": 7,
+        "tn": 37,
+        "precision": 0.8309,
+        "recall": 0.9417,
+        "f1_score": 0.8828,
+        "mcc": 0.6124,
+        "balanced_accuracy": 0.7792,
+        "accuracy": 0.8333,
+        "roc_auc": 0.8967,
+        "f1_ci_95": [
+          0.8392,
+          0.9529
+        ],
+        "auc_ci_95": [
+          0.7969,
+          0.9775
+        ]
+      },
+      "JPlag/MOSS Token Baseline": {
+        "n_samples": 180,
+        "n_positives": 120,
+        "n_negatives": 60,
+        "tp": 62,
+        "fp": 3,
+        "fn": 58,
+        "tn": 57,
+        "precision": 0.9538,
+        "recall": 0.5167,
+        "f1_score": 0.6703,
+        "mcc": 0.458,
+        "balanced_accuracy": 0.7333,
+        "accuracy": 0.6611,
+        "roc_auc": 0.7402,
+        "f1_ci_95": [
+          0.6452,
+          0.6957
+        ],
+        "auc_ci_95": [
+          0.6782,
+          0.7988
+        ]
+      },
+      "Lexical-Only": {
+        "n_samples": 180,
+        "n_positives": 120,
+        "n_negatives": 60,
+        "tp": 31,
+        "fp": 5,
+        "fn": 89,
+        "tn": 55,
+        "precision": 0.8611,
+        "recall": 0.2583,
+        "f1_score": 0.3974,
+        "mcc": 0.2062,
+        "balanced_accuracy": 0.5875,
+        "accuracy": 0.4778,
+        "roc_auc": 0.8149,
+        "f1_ci_95": [
+          0.3797,
+          0.4258
+        ],
+        "auc_ci_95": [
+          0.6742,
+          0.9502
+        ]
+      },
+      "Structural-Only": {
+        "n_samples": 180,
+        "n_positives": 120,
+        "n_negatives": 60,
+        "tp": 71,
+        "fp": 14,
+        "fn": 49,
+        "tn": 46,
+        "precision": 0.8353,
+        "recall": 0.5917,
+        "f1_score": 0.6927,
+        "mcc": 0.3384,
+        "balanced_accuracy": 0.6792,
+        "accuracy": 0.65,
+        "roc_auc": 0.746,
+        "f1_ci_95": [
+          0.6479,
+          0.7463
+        ],
+        "auc_ci_95": [
+          0.6593,
+          0.8237
+        ]
+      }
+    }
+  },
+  "TransBench_Lite_210": {
+    "benchmark": "TransBench-Lite Test Split 210",
+    "methods": {
+      "EHSA Full Model (L+S+M+B)": {
+        "n_samples": 210,
+        "n_positives": 150,
+        "n_negatives": 60,
+        "tp": 150,
+        "fp": 6,
+        "fn": 0,
+        "tn": 54,
+        "precision": 0.9615,
+        "recall": 1.0,
+        "f1_score": 0.9804,
+        "mcc": 0.9303,
+        "balanced_accuracy": 0.95,
+        "accuracy": 0.9714,
+        "roc_auc": 1.0,
+        "f1_ci_95": [
+          0.9672,
+          0.9937
+        ],
+        "auc_ci_95": [
+          1.0,
+          1.0
+        ]
+      },
+      "Semantic-Only Baseline": {
+        "n_samples": 210,
+        "n_positives": 150,
+        "n_negatives": 60,
+        "tp": 136,
+        "fp": 31,
+        "fn": 14,
+        "tn": 29,
+        "precision": 0.8144,
+        "recall": 0.9067,
+        "f1_score": 0.858,
+        "mcc": 0.4366,
+        "balanced_accuracy": 0.695,
+        "accuracy": 0.7857,
+        "roc_auc": 0.7438,
+        "f1_ci_95": [
+          0.8296,
+          0.881
+        ],
+        "auc_ci_95": [
+          0.6555,
+          0.8489
+        ]
+      },
+      "JPlag/MOSS Token Baseline": {
+        "n_samples": 210,
+        "n_positives": 150,
+        "n_negatives": 60,
+        "tp": 149,
+        "fp": 0,
+        "fn": 1,
+        "tn": 60,
+        "precision": 1.0,
+        "recall": 0.9933,
+        "f1_score": 0.9967,
+        "mcc": 0.9885,
+        "balanced_accuracy": 0.9967,
+        "accuracy": 0.9952,
+        "roc_auc": 0.9996,
+        "f1_ci_95": [
+          0.9878,
+          1.0
+        ],
+        "auc_ci_95": [
+          0.9983,
+          1.0
+        ]
+      },
+      "Lexical-Only Baseline": {
+        "n_samples": 210,
+        "n_positives": 150,
+        "n_negatives": 60,
+        "tp": 97,
+        "fp": 0,
+        "fn": 53,
+        "tn": 60,
+        "precision": 1.0,
+        "recall": 0.6467,
+        "f1_score": 0.7854,
+        "mcc": 0.586,
+        "balanced_accuracy": 0.8233,
+        "accuracy": 0.7476,
+        "roc_auc": 0.9686,
+        "f1_ci_95": [
+          0.6864,
+          0.8704
+        ],
+        "auc_ci_95": [
+          0.9394,
+          0.9926
+        ]
+      },
+      "Structural-Only Baseline": {
+        "n_samples": 210,
+        "n_positives": 150,
+        "n_negatives": 60,
+        "tp": 150,
+        "fp": 17,
+        "fn": 0,
+        "tn": 43,
+        "precision": 0.8982,
+        "recall": 1.0,
+        "f1_score": 0.9464,
+        "mcc": 0.8023,
+        "balanced_accuracy": 0.8583,
+        "accuracy": 0.919,
+        "roc_auc": 0.9961,
+        "f1_ci_95": [
+          0.9148,
+          0.9734
+        ],
+        "auc_ci_95": [
+          0.9914,
+          1.0
+        ]
+      }
+    }
+  },
+  "CodeNet_100": {
+    "benchmark": "IBM CodeNet Controlled Subset 100",
+    "methods": {
+      "EHSA Multi-View Fusion (OOF)": {
+        "n_samples": 100,
+        "n_positives": 50,
+        "n_negatives": 50,
+        "tp": 45,
+        "fp": 5,
+        "fn": 5,
+        "tn": 45,
+        "precision": 0.9,
+        "recall": 0.9,
+        "f1_score": 0.9,
+        "mcc": 0.8,
+        "balanced_accuracy": 0.9,
+        "accuracy": 0.9,
+        "roc_auc": 0.9256,
+        "f1_ci_95": [
+          0.8278,
+          0.9524
+        ],
+        "auc_ci_95": [
+          0.8512,
+          0.9873
+        ]
+      },
+      "Semantic-Only (UniXcoder)": {
+        "n_samples": 100,
+        "n_positives": 50,
+        "n_negatives": 50,
+        "tp": 42,
+        "fp": 5,
+        "fn": 8,
+        "tn": 45,
+        "precision": 0.8936,
+        "recall": 0.84,
+        "f1_score": 0.866,
+        "mcc": 0.7413,
+        "balanced_accuracy": 0.87,
+        "accuracy": 0.87,
+        "roc_auc": 0.928,
+        "f1_ci_95": [
+          0.7442,
+          0.9495
+        ],
+        "auc_ci_95": [
+          0.856,
+          0.9878
+        ]
+      },
+      "JPlag/MOSS Token Baseline": {
+        "n_samples": 100,
+        "n_positives": 50,
+        "n_negatives": 50,
+        "tp": 4,
+        "fp": 0,
+        "fn": 46,
+        "tn": 50,
+        "precision": 1.0,
+        "recall": 0.08,
+        "f1_score": 0.1481,
+        "mcc": 0.2041,
+        "balanced_accuracy": 0.54,
+        "accuracy": 0.54,
+        "roc_auc": 0.8468,
+        "f1_ci_95": [
+          0.0,
+          0.2759
+        ],
+        "auc_ci_95": [
+          0.6971,
+          0.9591
+        ]
+      },
+      "Lexical-Only": {
+        "n_samples": 100,
+        "n_positives": 50,
+        "n_negatives": 50,
+        "tp": 0,
+        "fp": 0,
+        "fn": 50,
+        "tn": 50,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "mcc": 0.0,
+        "balanced_accuracy": 0.5,
+        "accuracy": 0.5,
+        "roc_auc": 0.8808,
+        "f1_ci_95": [
+          0.0,
+          0.0
+        ],
+        "auc_ci_95": [
+          0.7604,
+          0.9647
+        ]
+      },
+      "Structural-Only": {
+        "n_samples": 100,
+        "n_positives": 50,
+        "n_negatives": 50,
+        "tp": 19,
+        "fp": 2,
+        "fn": 31,
+        "tn": 48,
+        "precision": 0.9048,
+        "recall": 0.38,
+        "f1_score": 0.5352,
+        "mcc": 0.4174,
+        "balanced_accuracy": 0.67,
+        "accuracy": 0.67,
+        "roc_auc": 0.8648,
+        "f1_ci_95": [
+          0.403,
+          0.6581
+        ],
+        "auc_ci_95": [
+          0.8023,
+          0.9333
+        ]
+      }
+    }
+  },
+  "OJClone_32": {
+    "benchmark": "OJClone Benchmark 32",
+    "methods": {
+      "Fusion (TransBench Weights)": {
+        "n_samples": 32,
+        "n_positives": 22,
+        "n_negatives": 10,
+        "tp": 12,
+        "fp": 0,
+        "fn": 10,
+        "tn": 10,
+        "precision": 1.0,
+        "recall": 0.5455,
+        "f1_score": 0.7059,
+        "mcc": 0.5222,
+        "balanced_accuracy": 0.7727,
+        "accuracy": 0.6875,
+        "roc_auc": 0.7955,
+        "f1_ci_95": [
+          0.624,
+          0.8
+        ],
+        "auc_ci_95": [
+          0.6444,
+          0.9215
+        ]
+      },
+      "Semantic-Only (UniXcoder)": {
+        "n_samples": 32,
+        "n_positives": 22,
+        "n_negatives": 10,
+        "tp": 17,
+        "fp": 2,
+        "fn": 5,
+        "tn": 8,
+        "precision": 0.8947,
+        "recall": 0.7727,
+        "f1_score": 0.8293,
+        "mcc": 0.5405,
+        "balanced_accuracy": 0.7864,
+        "accuracy": 0.7812,
+        "roc_auc": 0.8818,
+        "f1_ci_95": [
+          0.5806,
+          0.9388
+        ],
+        "auc_ci_95": [
+          0.8519,
+          0.9318
+        ]
+      },
+      "JPlag/MOSS Token Baseline": {
+        "n_samples": 32,
+        "n_positives": 22,
+        "n_negatives": 10,
+        "tp": 12,
+        "fp": 0,
+        "fn": 10,
+        "tn": 10,
+        "precision": 1.0,
+        "recall": 0.5455,
+        "f1_score": 0.7059,
+        "mcc": 0.5222,
+        "balanced_accuracy": 0.7727,
+        "accuracy": 0.6875,
+        "roc_auc": 0.7955,
+        "f1_ci_95": [
+          0.624,
+          0.8
+        ],
+        "auc_ci_95": [
+          0.7,
+          0.881
+        ]
+      },
+      "Lexical-Only": {
+        "n_samples": 32,
+        "n_positives": 22,
+        "n_negatives": 10,
+        "tp": 10,
+        "fp": 0,
+        "fn": 12,
+        "tn": 10,
+        "precision": 1.0,
+        "recall": 0.4545,
+        "f1_score": 0.625,
+        "mcc": 0.4545,
+        "balanced_accuracy": 0.7273,
+        "accuracy": 0.625,
+        "roc_auc": 0.7864,
+        "f1_ci_95": [
+          0.5426,
+          0.7333
+        ],
+        "auc_ci_95": [
+          0.7253,
+          0.8889
+        ]
+      },
+      "Structural-Only": {
+        "n_samples": 32,
+        "n_positives": 22,
+        "n_negatives": 10,
+        "tp": 12,
+        "fp": 2,
+        "fn": 10,
+        "tn": 8,
+        "precision": 0.8571,
+        "recall": 0.5455,
+        "f1_score": 0.6667,
+        "mcc": 0.3228,
+        "balanced_accuracy": 0.6727,
+        "accuracy": 0.625,
+        "roc_auc": 0.8,
+        "f1_ci_95": [
+          0.5,
+          0.7635
+        ],
+        "auc_ci_95": [
+          0.6444,
+          0.9145
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+# Exclude raw downloaded archives and large cache files
+raw/
+cache/
+*.tar.gz
+*.jsonl
+*.parquet

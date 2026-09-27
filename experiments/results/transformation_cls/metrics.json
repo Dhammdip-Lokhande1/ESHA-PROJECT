@@ -1,0 +1,80 @@
+{
+  "provenance_and_split_audit": {
+    "total_test_pairs": 210,
+    "total_train_pairs": 210,
+    "historical_in_sample_note": "200/210 (95.24%) is in-sample accuracy of DecisionTree on train split; 175/210 (83.33%) is out-of-sample accuracy of DecisionTree on test split; 124/210 (59.05%) is out-of-sample accuracy of Rule-Based Classifier on test split."
+  },
+  "rule_based_classifier_test_split": {
+    "correct_diagonal": 124,
+    "total_pairs": 210,
+    "accuracy": 0.5905,
+    "macro_f1": 0.6897,
+    "weighted_f1": 0.6644,
+    "per_class": {
+      "exact_copy": {
+        "precision": 0.5714,
+        "recall": 1.0,
+        "f1_score": 0.7273,
+        "support": 30
+      },
+      "structural_refactoring": {
+        "precision": 0.7556,
+        "recall": 0.3953,
+        "f1_score": 0.5191,
+        "support": 90
+      },
+      "unrelated": {
+        "precision": 1.0,
+        "recall": 0.7442,
+        "f1_score": 0.8533,
+        "support": 60
+      },
+      "variable_renaming": {
+        "precision": 0.4918,
+        "recall": 1.0,
+        "f1_score": 0.6593,
+        "support": 30
+      }
+    }
+  },
+  "decision_tree_classifier_test_split": {
+    "max_depth": 4,
+    "correct_diagonal": 175,
+    "total_pairs": 210,
+    "accuracy": 0.8333,
+    "macro_f1": 0.8415,
+    "weighted_f1": 0.844,
+    "per_class": {
+      "exact_copy": {
+        "precision": 1.0,
+        "recall": 0.9333,
+        "f1_score": 0.9655,
+        "support": 30
+      },
+      "structural_refactoring": {
+        "precision": 0.9365,
+        "recall": 0.6556,
+        "f1_score": 0.7712,
+        "support": 90
+      },
+      "unrelated": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "support": 60
+      },
+      "variable_renaming": {
+        "precision": 0.4746,
+        "recall": 0.9333,
+        "f1_score": 0.6292,
+        "support": 30
+      }
+    }
+  },
+  "decision_tree_classifier_train_split_in_sample": {
+    "correct_diagonal": 178,
+    "total_pairs": 210,
+    "accuracy": 0.8476,
+    "macro_f1": 0.8533
+  }
+}

@@ -1,0 +1,11 @@
+participant_id,pair_id,condition,confidence_score,usefulness_score,trust_score
+P1,pair1,score_only,,,
+P1,pair1,explainable,,,
+P1,pair2,score_only,,,
+P1,pair2,explainable,,,
+P1,pair3,score_only,,,
+P1,pair3,explainable,,,
+P1,pair4,score_only,,,
+P1,pair4,explainable,,,
+P1,pair5,score_only,,,
+P1,pair5,explainable,,,

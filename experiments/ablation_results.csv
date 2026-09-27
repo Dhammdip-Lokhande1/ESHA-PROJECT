@@ -1,0 +1,7 @@
+Strategy,Precision,Recall,F1,AUC
+Lexical Only,1.000,0.250,0.400,0.813
+Structural Only,0.963,0.433,0.598,0.748
+Semantic Only,0.961,0.408,0.573,0.898
+Behavioral Only,0.906,0.725,0.806,0.863
+Fixed Fusion (T=0.8),0.970,0.267,0.418,0.887
+Adaptive Fusion (5-Fold Grouped CV),0.884,0.950,0.916,0.887

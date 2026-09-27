@@ -1,0 +1,35 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ehsa_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ehsa_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite+aiosqlite:////app/data/ehsa.db
+      - MODEL_NAME=microsoft/unixcoder-base
+      - CORS_ORIGINS=http://localhost:3000
+    # No --reload in containerized environments: wastes CPU and is inappropriate
+    # for production. The Dockerfile CMD also omits --reload for consistency.
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: ehsa_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  ehsa_data:

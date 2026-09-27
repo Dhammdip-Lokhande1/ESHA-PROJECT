@@ -1,0 +1,554 @@
+{
+  "generated_at": "2026-09-20",
+  "api_routes": {
+    "count": 25,
+    "endpoints": [
+      {
+        "path": "/openapi.json",
+        "name": "openapi",
+        "methods": [
+          "GET",
+          "HEAD"
+        ]
+      },
+      {
+        "path": "/docs",
+        "name": "swagger_ui_html",
+        "methods": [
+          "GET",
+          "HEAD"
+        ]
+      },
+      {
+        "path": "/docs/oauth2-redirect",
+        "name": "swagger_ui_redirect",
+        "methods": [
+          "GET",
+          "HEAD"
+        ]
+      },
+      {
+        "path": "/redoc",
+        "name": "redoc_html",
+        "methods": [
+          "GET",
+          "HEAD"
+        ]
+      },
+      {
+        "path": "/api/v1/auth/register",
+        "name": "register",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/auth/login",
+        "name": "login",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/auth/me",
+        "name": "get_me",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/auth/logout",
+        "name": "logout",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/admin/users",
+        "name": "list_users",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/admin/users/{user_id}",
+        "name": "update_user",
+        "methods": [
+          "PATCH"
+        ]
+      },
+      {
+        "path": "/api/v1/analyze",
+        "name": "analyze",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/feedback/{run_id}",
+        "name": "submit_feedback",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/runs",
+        "name": "list_runs",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/runs/{run_id}/claim",
+        "name": "claim_run",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/runs/{run_id}",
+        "name": "delete_run",
+        "methods": [
+          "DELETE"
+        ]
+      },
+      {
+        "path": "/api/v1/fusion/weights",
+        "name": "get_fusion_weights",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/fusion/retrain",
+        "name": "retrain_fusion",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/dashboard/my",
+        "name": "my_dashboard_summary",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/analytics/summary",
+        "name": "instructor_dashboard_summary",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/instructor/dashboard",
+        "name": "instructor_dashboard_summary",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/research/evaluation",
+        "name": "research_evaluation_summary",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/dashboard/summary",
+        "name": "dashboard_summary",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/api/v1/compare/batch",
+        "name": "compare_batch",
+        "methods": [
+          "POST"
+        ]
+      },
+      {
+        "path": "/api/v1/report/{run_id}",
+        "name": "get_report",
+        "methods": [
+          "GET"
+        ]
+      },
+      {
+        "path": "/health",
+        "name": "health",
+        "methods": [
+          "GET"
+        ]
+      }
+    ]
+  },
+  "database": {
+    "db_path": "D:/Projects/EHSA \u2014 Explainable Hybrid Similarity Analyzer/ehsa.db",
+    "table_count": 5,
+    "tables": {
+      "evidence": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "INTEGER",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": true
+          },
+          {
+            "cid": 1,
+            "name": "run_id",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 2,
+            "name": "dimension",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 3,
+            "name": "file_ref",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 4,
+            "name": "line_start",
+            "type": "INTEGER",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 5,
+            "name": "line_end",
+            "type": "INTEGER",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 6,
+            "name": "detail",
+            "type": "TEXT",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          }
+        ],
+        "row_count": 20162
+      },
+      "feedback": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "INTEGER",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": true
+          },
+          {
+            "cid": 1,
+            "name": "run_id",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 2,
+            "name": "verdict",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 3,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": true,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": false
+          },
+          {
+            "cid": 4,
+            "name": "user_id",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          }
+        ],
+        "row_count": 183
+      },
+      "fusion_weight_history": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "INTEGER",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": true
+          },
+          {
+            "cid": 1,
+            "name": "weights",
+            "type": "TEXT",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 2,
+            "name": "trained_on_n_samples",
+            "type": "INTEGER",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 3,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": true,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": false
+          }
+        ],
+        "row_count": 7
+      },
+      "runs": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": true
+          },
+          {
+            "cid": 1,
+            "name": "file_a_name",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 2,
+            "name": "file_b_name",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 3,
+            "name": "lexical_score",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 4,
+            "name": "structural_score",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 5,
+            "name": "semantic_score",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 6,
+            "name": "behavioral_score",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 7,
+            "name": "fusion_score",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 8,
+            "name": "fusion_weights_used",
+            "type": "TEXT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 9,
+            "name": "transformation_type",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 10,
+            "name": "transformation_confidence",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 11,
+            "name": "ai_generation_likelihood",
+            "type": "FLOAT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 12,
+            "name": "explanation",
+            "type": "TEXT",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 13,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": true,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": false
+          },
+          {
+            "cid": 14,
+            "name": "user_id",
+            "type": "VARCHAR",
+            "notnull": false,
+            "dflt_value": null,
+            "pk": false
+          }
+        ],
+        "row_count": 700
+      },
+      "users": {
+        "columns": [
+          {
+            "cid": 0,
+            "name": "id",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": true
+          },
+          {
+            "cid": 1,
+            "name": "username",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 2,
+            "name": "email",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 3,
+            "name": "password_hash",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 4,
+            "name": "role",
+            "type": "VARCHAR",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 5,
+            "name": "is_active",
+            "type": "INTEGER",
+            "notnull": true,
+            "dflt_value": null,
+            "pk": false
+          },
+          {
+            "cid": 6,
+            "name": "created_at",
+            "type": "DATETIME",
+            "notnull": true,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": false
+          },
+          {
+            "cid": 7,
+            "name": "updated_at",
+            "type": "DATETIME",
+            "notnull": true,
+            "dflt_value": "CURRENT_TIMESTAMP",
+            "pk": false
+          }
+        ],
+        "row_count": 15
+      }
+    }
+  },
+  "test_suite": {
+    "test_files_count": 19,
+    "test_files": [
+      "test_ablation.py",
+      "test_adaptive_trainer.py",
+      "test_ai_generation_detector.py",
+      "test_api.py",
+      "test_attribution_evaluation.py",
+      "test_auth_rbac.py",
+      "test_baselines.py",
+      "test_behavioral.py",
+      "test_explanation_generator.py",
+      "test_fair_eval.py",
+      "test_fusion.py",
+      "test_lexical.py",
+      "test_preprocessing.py",
+      "test_security_isolation.py",
+      "test_semantic.py",
+      "test_structural.py",
+      "test_transbench.py",
+      "test_transformation_cls.py",
+      "test_transformation_detector.py"
+    ]
+  }
+}

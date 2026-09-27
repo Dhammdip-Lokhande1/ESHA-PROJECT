@@ -1,0 +1,22 @@
+{
+  "formatting_change": {
+    "exact_copy": 28,
+    "structural_refactoring": 2
+  },
+  "variable_renaming": {
+    "variable_renaming": 28,
+    "structural_refactoring": 2
+  },
+  "structural_refactoring": {
+    "structural_refactoring": 29,
+    "variable_renaming": 1
+  },
+  "dead_code_insertion": {
+    "structural_refactoring": 30
+  },
+  "combined": {
+    "variable_renaming": 30
+  },
+  "easy_negative": {},
+  "hard_negative": {}
+}

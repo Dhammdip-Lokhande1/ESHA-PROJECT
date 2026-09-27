@@ -1,0 +1,17 @@
+{
+  "pair_id": "P028_EXACT",
+  "source_program_id": "P028",
+  "domain": "Character & Frequency Count",
+  "category": "exact_copy",
+  "label": 1,
+  "language": "python",
+  "source_type": "internal_synthetic",
+  "source_dataset": "EHSA_Benchmark_v1",
+  "transformation_type": "exact_copy",
+  "transformation_description": "Formatting and comment variation of original code",
+  "behavior_preserved": true,
+  "validation_status": "passed",
+  "fold": 5,
+  "license": "MIT",
+  "provenance": "EHSA Research Team controlled synthetic generation"
+}

@@ -1,0 +1,26 @@
+{
+  "exact_copy": {
+    "exact_copy": 28,
+    "structural_refactoring": 2,
+    "unrelated": 0,
+    "variable_renaming": 0
+  },
+  "structural_refactoring": {
+    "structural_refactoring": 59,
+    "variable_renaming": 31,
+    "exact_copy": 0,
+    "unrelated": 0
+  },
+  "unrelated": {
+    "unrelated": 60,
+    "exact_copy": 0,
+    "structural_refactoring": 0,
+    "variable_renaming": 0
+  },
+  "variable_renaming": {
+    "variable_renaming": 28,
+    "structural_refactoring": 2,
+    "exact_copy": 0,
+    "unrelated": 0
+  }
+}

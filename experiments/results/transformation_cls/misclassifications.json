@@ -1,0 +1,227 @@
+[
+  {
+    "pair_id": "tb_pos_test_271",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9999998211860657,
+      "behavioral": 0.5,
+      "fusion": 0.9305000000000001
+    },
+    "ai_likelihood": 0.1791
+  },
+  {
+    "pair_id": "tb_pos_test_273",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9995723962783813,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1878
+  },
+  {
+    "pair_id": "tb_pos_test_275",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.996027946472168,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1857
+  },
+  {
+    "pair_id": "tb_pos_test_277",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1802
+  },
+  {
+    "pair_id": "tb_pos_test_279",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9972913861274719,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1924
+  },
+  {
+    "pair_id": "tb_pos_test_281",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9973970055580139,
+      "behavioral": 0.5,
+      "fusion": 0.9305000000000001
+    },
+    "ai_likelihood": 0.1818
+  },
+  {
+    "pair_id": "tb_pos_test_283",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1856
+  },
+  {
+    "pair_id": "tb_pos_test_284",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1859
+  },
+  {
+    "pair_id": "tb_pos_test_286",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1894
+  },
+  {
+    "pair_id": "tb_pos_test_287",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 0.5,
+      "fusion": 0.9305000000000001
+    },
+    "ai_likelihood": 0.1909
+  },
+  {
+    "pair_id": "tb_pos_test_288",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9999998211860657,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1977
+  },
+  {
+    "pair_id": "tb_pos_test_292",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1835
+  },
+  {
+    "pair_id": "tb_pos_test_294",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9972913861274719,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1924
+  },
+  {
+    "pair_id": "tb_pos_test_295",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 0.9999999403953552,
+      "behavioral": 0.5,
+      "fusion": 0.9305000000000001
+    },
+    "ai_likelihood": 0.1992
+  },
+  {
+    "pair_id": "tb_pos_test_296",
+    "expected_type": "structural_refactoring",
+    "predicted_type": "exact_copy",
+    "confidence": 1.0,
+    "rule_matched": "Lexical similarity (1.00) \u2265 0.92 AND structural similarity (1.00) \u2265 0.92. Both content and structure are nearly identical.",
+    "scores": {
+      "lexical": 1.0,
+      "structural": 1.0,
+      "semantic": 1.0,
+      "behavioral": 1.0,
+      "fusion": 0.9990000000000001
+    },
+    "ai_likelihood": 0.1856
+  }
+]

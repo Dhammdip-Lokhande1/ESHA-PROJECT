@@ -1,0 +1,31 @@
+source_id,domain,name,license,source_type,provenance
+P001,Dynamic Programming & Recursion,Fibonacci Sequence,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P002,Mathematics & Accumulation,Factorial Computation,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P003,Sorting Algorithms,Bubble Sort,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P004,Searching Algorithms,Binary Search,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P005,Number Theory,Prime Number Check,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P006,String Processing,String Reversal,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P007,Array Operations,Find Maximum Element,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P008,Two-Pointer Algorithms,Palindrome Checker,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P009,Array Aggregation,Array Sum & Average,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P010,String Manipulation & Filtering,Vowel Counter,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P011,2D Matrix Operations,Matrix Transposition,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P012,Data Structure Flattening,Flatten Nested List,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P013,Math & Number Theory,GCD Computation,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P014,String Hash & Frequency,Anagram Checker,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P015,Sorting Algorithms,Insertion Sort,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P016,Data Compression,Run-Length Encoding,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P017,Object-Oriented & Binary Trees,Binary Tree Node Counter,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P018,Object-Oriented Data Structures,Stack Implementation,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P019,Array Searching,Linear Search First & Last Index,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P020,Dictionary & Map Aggregation,Word Frequency Counter,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P021,Cryptography & String Shifts,Caesar Cipher Encryption,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P022,Combinatorics & 2D Arrays,Pascal's Triangle Generator,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P023,Queue Data Structure,Queue FIFO Buffer,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P024,Two Pointers & Merge,Merge Sorted Lists,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P025,Set & Order Preservation,Remove Duplicates (Preserve Order),MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P026,String Operations,Longest Common Prefix,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P027,Divide & Conquer Math,Exponentiation (Power x^n),MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P028,Character & Frequency Count,Count Character Occurrences,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P029,Sorting Algorithms,Selection Sort,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification
+P030,Stack Parsing & Matching,Valid Parentheses Checker,MIT,internal_synthetic,EHSA Research Team controlled synthetic specification

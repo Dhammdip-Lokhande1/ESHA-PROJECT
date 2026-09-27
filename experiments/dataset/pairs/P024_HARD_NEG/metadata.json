@@ -1,0 +1,17 @@
+{
+  "pair_id": "P024_HARD_NEG",
+  "source_program_id": "P024",
+  "domain": "Two Pointers & Merge",
+  "category": "hard_negative",
+  "label": 0,
+  "language": "python",
+  "source_type": "internal_synthetic",
+  "source_dataset": "EHSA_Benchmark_v1",
+  "transformation_type": "hard_negative",
+  "transformation_description": "Superficially similar syntax / boilerplate with non-equivalent logic",
+  "behavior_preserved": false,
+  "validation_status": "n/a (unrelated)",
+  "fold": 4,
+  "license": "MIT",
+  "provenance": "EHSA Research Team controlled synthetic generation"
+}

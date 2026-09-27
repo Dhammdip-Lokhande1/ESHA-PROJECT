@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --color-accent: #6366f1; /* Indigo 500 */
+  --color-accent-hover: #4f46e5; /* Indigo 600 */
+  --color-accent-light: #818cf8; /* Indigo 400 */
+  
+  --color-warning: #f59e0b; /* Amber 500 */
+  --color-safe: #10b981; /* Emerald 500 */
+  
+  --color-panel: #0f172a; /* Slate 900 */
+  --color-panel-border: #1e293b; /* Slate 800 */
+  
+  --color-success: #10b981;
+  --color-error: #ef4444;
+}
+
+:root {
+  --background: #020617; /* Slate 950 */
+  --foreground: #f8fafc; /* Slate 50 */
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset some monaco editor conflicts if any */
+.monaco-editor {
+  padding-top: 8px;
+}

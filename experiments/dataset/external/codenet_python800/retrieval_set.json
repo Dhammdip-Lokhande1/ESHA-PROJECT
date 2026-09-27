@@ -1,0 +1,130 @@
+{
+  "total_queries": 10,
+  "queries": [
+    {
+      "query_id": "codenet_py_8",
+      "query_code": "heights = [int(input()) for _ in range(10)]\nheights.sort(reverse=True)\nfor h in heights[:3]:\n    print(h)",
+      "problem_id": 2,
+      "candidate_clone_ids": [
+        "codenet_py_9",
+        "codenet_py_10",
+        "codenet_py_11",
+        "codenet_py_12",
+        "codenet_py_13",
+        "codenet_py_14"
+      ]
+    },
+    {
+      "query_id": "codenet_py_36",
+      "query_code": "import math, sys\nfor line in sys.stdin:\n    a, b = map(int, line.split())\n    g = math.gcd(a, b)\n    l = (a * b) // g\n    print(g, l)",
+      "problem_id": 6,
+      "candidate_clone_ids": [
+        "codenet_py_37",
+        "codenet_py_38",
+        "codenet_py_39",
+        "codenet_py_40",
+        "codenet_py_41",
+        "codenet_py_42"
+      ]
+    },
+    {
+      "query_id": "codenet_py_43",
+      "query_code": "s = input()\nprint(s[::-1])",
+      "problem_id": 7,
+      "candidate_clone_ids": [
+        "codenet_py_44",
+        "codenet_py_45",
+        "codenet_py_46",
+        "codenet_py_47",
+        "codenet_py_48",
+        "codenet_py_49"
+      ]
+    },
+    {
+      "query_id": "codenet_py_50",
+      "query_code": "n = int(input())\ndebt = 100000\nfor _ in range(n):\n    debt = int(debt * 1.05)\n    if debt % 1000 != 0:\n        debt = (debt // 1000 + 1) * 1000\nprint(debt)",
+      "problem_id": 8,
+      "candidate_clone_ids": [
+        "codenet_py_51",
+        "codenet_py_52",
+        "codenet_py_53",
+        "codenet_py_54",
+        "codenet_py_55",
+        "codenet_py_56"
+      ]
+    },
+    {
+      "query_id": "codenet_py_57",
+      "query_code": "import sys\nfor line in sys.stdin:\n    n = int(line)\n    ans = 0\n    for a in range(10):\n        for b in range(10):\n            for c in range(10):\n                for d in range(10):\n                    if a + b + c + d == n:\n                        ans += 1\n    print(ans)",
+      "problem_id": 9,
+      "candidate_clone_ids": [
+        "codenet_py_58",
+        "codenet_py_59",
+        "codenet_py_60",
+        "codenet_py_61",
+        "codenet_py_62",
+        "codenet_py_63"
+      ]
+    },
+    {
+      "query_id": "codenet_py_95",
+      "query_code": "import sys\nfor line in sys.stdin:\n    d = int(line)\n    ans = sum((i * d)**2 * d for i in range(1, 600 // d))\n    print(ans)",
+      "problem_id": 15,
+      "candidate_clone_ids": [
+        "codenet_py_96",
+        "codenet_py_97",
+        "codenet_py_98",
+        "codenet_py_99",
+        "codenet_py_100"
+      ]
+    },
+    {
+      "query_id": "codenet_py_101",
+      "query_code": "n = int(input())\nfor _ in range(n):\n    a = int(input())\n    b = int(input())\n    s = a + b\n    if len(str(s)) > 80:\n        print('overflow')\n    else:\n        print(s)",
+      "problem_id": 16,
+      "candidate_clone_ids": [
+        "codenet_py_102",
+        "codenet_py_103",
+        "codenet_py_104",
+        "codenet_py_105",
+        "codenet_py_106"
+      ]
+    },
+    {
+      "query_id": "codenet_py_113",
+      "query_code": "import sys\nfor line in sys.stdin:\n    s = line.strip()\n    for shift in range(26):\n        dec = ''\n        for c in s:\n            if 'a' <= c <= 'z':\n                dec += chr((ord(c) - ord('a') + shift) % 26 + ord('a'))\n            else:\n                dec += c\n        if 'the' in dec or 'this' in dec or 'that' in dec:\n            print(dec)\n            break",
+      "problem_id": 18,
+      "candidate_clone_ids": [
+        "codenet_py_114",
+        "codenet_py_115",
+        "codenet_py_116",
+        "codenet_py_117",
+        "codenet_py_118"
+      ]
+    },
+    {
+      "query_id": "codenet_py_173",
+      "query_code": "import datetime, sys\ndays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']\nfor line in sys.stdin:\n    m, d = map(int, line.split())\n    if m == 0: break\n    dt = datetime.date(2004, m, d)\n    print(days[dt.weekday()])",
+      "problem_id": 28,
+      "candidate_clone_ids": [
+        "codenet_py_174",
+        "codenet_py_175",
+        "codenet_py_176",
+        "codenet_py_177",
+        "codenet_py_178"
+      ]
+    },
+    {
+      "query_id": "codenet_py_239",
+      "query_code": "import sys\nfrom collections import Counter\nfor line in sys.stdin:\n    cards = sorted(map(int, line.split(',')))\n    counts = sorted(Counter(cards).values(), reverse=True)\n    is_straight = (len(set(cards)) == 5 and cards[4] - cards[0] == 4) or (cards == [1, 10, 11, 12, 13])\n    if counts == [4, 1]: print('four card')\n    elif counts == [3, 2]: print('full house')\n    elif is_straight: print('straight')\n    elif counts == [3, 1, 1]: print('three card')\n    elif counts == [2, 2, 1]: print('two pair')\n    elif counts == [2, 1, 1, 1]: print('one pair')\n    else: print('null')",
+      "problem_id": 39,
+      "candidate_clone_ids": [
+        "codenet_py_240",
+        "codenet_py_241",
+        "codenet_py_242",
+        "codenet_py_243",
+        "codenet_py_244"
+      ]
+    }
+  ]
+}

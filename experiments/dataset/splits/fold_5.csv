@@ -1,0 +1,37 @@
+pair_id,source_program_id,domain,category,label,language,source_type,source_dataset,transformation_type,behavior_preserved,validation_status,fold,license
+P025_EXACT,P025,Set & Order Preservation,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P025_VAR,P025,Set & Order Preservation,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P025_STRUCT,P025,Set & Order Preservation,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P025_AI,P025,Set & Order Preservation,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P025_HARD_NEG,P025,Set & Order Preservation,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P025_UNREL,P025,Set & Order Preservation,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT
+P026_EXACT,P026,String Operations,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P026_VAR,P026,String Operations,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P026_STRUCT,P026,String Operations,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P026_AI,P026,String Operations,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P026_HARD_NEG,P026,String Operations,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P026_UNREL,P026,String Operations,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT
+P027_EXACT,P027,Divide & Conquer Math,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P027_VAR,P027,Divide & Conquer Math,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P027_STRUCT,P027,Divide & Conquer Math,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P027_AI,P027,Divide & Conquer Math,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P027_HARD_NEG,P027,Divide & Conquer Math,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P027_UNREL,P027,Divide & Conquer Math,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT
+P028_EXACT,P028,Character & Frequency Count,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P028_VAR,P028,Character & Frequency Count,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P028_STRUCT,P028,Character & Frequency Count,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P028_AI,P028,Character & Frequency Count,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P028_HARD_NEG,P028,Character & Frequency Count,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P028_UNREL,P028,Character & Frequency Count,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT
+P029_EXACT,P029,Sorting Algorithms,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P029_VAR,P029,Sorting Algorithms,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P029_STRUCT,P029,Sorting Algorithms,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P029_AI,P029,Sorting Algorithms,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P029_HARD_NEG,P029,Sorting Algorithms,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P029_UNREL,P029,Sorting Algorithms,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT
+P030_EXACT,P030,Stack Parsing & Matching,exact_copy,1,python,internal_synthetic,EHSA_Benchmark_v1,exact_copy,True,passed,5,MIT
+P030_VAR,P030,Stack Parsing & Matching,variable_renaming,1,python,internal_synthetic,EHSA_Benchmark_v1,variable_renaming,True,passed,5,MIT
+P030_STRUCT,P030,Stack Parsing & Matching,structural_refactoring,1,python,internal_synthetic,EHSA_Benchmark_v1,structural_refactoring,True,passed,5,MIT
+P030_AI,P030,Stack Parsing & Matching,ai_rewrite,1,python,internal_synthetic,EHSA_Benchmark_v1,ai_rewrite,True,passed,5,MIT
+P030_HARD_NEG,P030,Stack Parsing & Matching,hard_negative,0,python,internal_synthetic,EHSA_Benchmark_v1,hard_negative,False,n/a (unrelated),5,MIT
+P030_UNREL,P030,Stack Parsing & Matching,unrelated,0,python,internal_synthetic,EHSA_Benchmark_v1,unrelated,False,n/a (unrelated),5,MIT

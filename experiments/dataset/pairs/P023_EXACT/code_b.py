@@ -1,0 +1,15 @@
+class Queue:
+    # FIFO queue implementation
+    def __init__(self):
+        self.items = []
+    def enqueue(self, item):
+        self.items.append(item)
+    def dequeue(self):
+        return self.items.pop(0) if self.items else None
+
+def run_queue():
+    q = Queue()
+    q.enqueue(10)
+    q.enqueue(20)
+    q.enqueue(30)
+    return [q.dequeue(), q.dequeue(), q.dequeue()]
