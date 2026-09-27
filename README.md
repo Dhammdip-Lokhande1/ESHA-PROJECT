@@ -1,133 +1,188 @@
 # EHSA — Explainable Hybrid Similarity Analyzer
 
-> An evidence-first Python source-code similarity investigation platform combining multi-channel signal analysis, explainable evidence generation, and adaptive feedback fusion.
+EHSA (Explainable Hybrid Similarity Analyzer) is a source-code similarity analysis platform designed to compare Python programs using multiple complementary signals.
+
+Instead of relying on a single similarity technique, EHSA combines **lexical, structural, semantic, and behavioral analysis** and provides supporting evidence for the resulting similarity assessment.
+
+The platform provides a web-based interface, REST API, authentication, role-based access control, batch comparison, adaptive fusion, and explainable analysis reports.
 
 ---
 
-## Overview
+## Features
 
-Traditional code similarity detectors rely either on brittle lexical token matching or opaque "black-box" neural embeddings that produce similarity scores without traceable evidence. **EHSA (Explainable Hybrid Similarity Analyzer)** addresses this challenge through an **evidence-first** architecture.
-
-Instead of providing a single unexplainable number, EHSA evaluates code across four independent analysis channels—**Lexical**, **Structural**, **Semantic**, and **Behavioral**—and pairs every score with fine-grained, inspectable evidence (such as shared $N$-grams, AST subtree edits, contextual embedding cosine distances, and dynamic execution outputs).EHSA integrates a closed-loop **Adaptive Fusion Engine** that refits feature weights via $L_2$-penalized Logistic Regression based on explicit instructor feedback (`confirmed` vs. `false_positive` verdicts).
-
----
-
-## Key Capabilities
-
-- **Multi-Channel Signal Extraction**:
-  - **Lexical Channel**: 3-gram multiset Jaccard ratio on tokenized source code.
-  - **Structural Channel**: Python Abstract Syntax Tree (AST) parsing with Zhang-Shasha (`zss`) tree edit distance.
-  - **Semantic Channel**: Contextual code embeddings using Hugging Face UniXcoder (`microsoft/unixcoder-base`) with L2-normalized mean-pooling.
-  - **Behavioral Channel**: Sandboxed subprocess execution evaluating functional output equivalence across test cases under strict memory (128 MB) and time (2.0s) constraints.
-- **Explainable Evidence Generation**:
-  - Transparent evidence payloads persisted directly to the database alongside run scores.
-  - Automatic detection of transformation types (*Exact Copy*, *Variable Renaming*, *Structural Refactoring*, *Likely AI Rewrite*, *Partial Match*, *Unrelated*).
-  - Rule-based AI-generation heuristics inspecting AST docstring density, type annotations, identifier lengths, and token entropy.
-- **Adaptive Weight Fusion**:
-  - Dynamically renormalizes weights when individual signals (e.g., behavioral or semantic) are absent ($None \neq 0.0$).
-  - Admin-triggered adaptive retraining refitting weights from historical feedback entries.
-- **Batch Comparison**:
-  - Pairwise $\mathcal{O}(N^2)$ matrix evaluation accepting up to 20 uploaded Python files (`POST /api/v1/compare/batch`).
-- **Security & Privacy**:
-  - PBKDF2-HMAC-SHA256 password hashing (600,000 iterations) and signed HS256 JWT tokens.
-  - Role-Based Access Control (`user`, `admin`), IDOR protection across run endpoints, and thread-safe sliding-window rate limiting.
-  - Guest isolation mode allowing guest analyses to run without leaking data to registered accounts.
-- **Report Export**:
-  - Downloadable investigation reports in HTML and structured JSON formats.
+- Compare two Python programs for similarity
+- Analyze source code using multiple similarity channels
+- Lexical similarity analysis (3-gram multiset Jaccard matching)
+- Structural similarity using Python AST (Zhang-Shasha tree edit distance)
+- Semantic similarity using UniXcoder embeddings (`microsoft/unixcoder-base`)
+- Behavioral comparison through sandboxed execution
+- Transformation-type detection (*Exact Copy*, *Variable Renaming*, *Structural Refactoring*, *Likely AI Rewrite*, *Partial Match*, *Unrelated*)
+- Evidence-based similarity reports
+- Batch comparison of multiple Python files ($\mathcal{O}(N^2)$ matrix evaluation)
+- Adaptive fusion using instructor feedback
+- User authentication and role-based access control (`user`, `admin`)
+- Guest analysis support with isolated run history
+- Analysis history and run claiming
+- HTML and JSON report export
+- REST API with interactive Swagger documentation (`/docs`)
+- Docker-based deployment
+- Local development support
 
 ---
 
 ## How EHSA Works
 
-EHSA processes input code pairs through a multi-stage sequential pipeline:
+EHSA analyzes source-code pairs through several independent channels.
 
-```mermaid
-flowchart TD
-    A["Submission Code (A & B)"] --> B["Preprocessing & AST Parsing"]
-    B --> C["Parallel Multi-Channel Execution"]
-    
-    C --> D["Lexical Analysis<br/><i>3-Gram Jaccard</i>"]
-    C --> E["Structural Analysis<br/><i>Zhang-Shasha AST Edit Distance</i>"]
-    C --> F["Semantic Analysis<br/><i>UniXcoder Embeddings</i>"]
-    C --> G["Behavioral Analysis<br/><i>Sandboxed Subprocess Execution</i>"]
-    C --> H["AI Detector<br/><i>AST & Lexical Heuristics</i>"]
-    
-    D --> I["Adaptive Signal Fusion"]
-    E --> I
-    F --> I
-    G --> I
-    
-    I --> J["Transformation Classifier"]
-    H --> J
-    J --> K["Evidence & Narrative Generator"]
-    
-    K --> L["DB Persistence (runs & evidence)"]
-    L --> M["API Response / UI Dashboard"]
-```
+### 1. Lexical Analysis
 
-### Analysis Signal Overview
+The lexical analyzer compares the surface-level representation of source code.
 
-| Signal | Primary Method | Purpose | Evidence Output |
-|---|---|---|---|
-| **Lexical** | 3-gram Multiset Jaccard | Surface-level token overlap | Top matched $N$-grams & occurrence counts |
-| **Structural** | Zhang-Shasha (`zss`) AST Tree Edit Distance | Program control flow & node shape | Subtree node match & divergence counts |
-| **Semantic** | UniXcoder Mean-Pooled Cosine Distance | Conceptual & algorithmic intent | Embedding cosine value & truncation disclosure |
-| **Behavioral** | Sandboxed Execution Subprocess | Functional runtime equivalence | Per-input stdout, stderr & match status |
-| **AI Detector** | AST & Lexical Heuristics | AI rewrite likelihood | Feature density breakdown (types, docstrings, etc.) |
+It examines token and $N$-gram patterns to identify similarities such as:
+
+- Shared code fragments
+- Similar token sequences
+- Repeated structures
+- Variable and syntax patterns
 
 ---
 
-## High-Level Architecture
+### 2. Structural Analysis
 
-The system is structured as a decoupled client-server architecture:
+The structural analyzer parses Python programs into Abstract Syntax Trees (ASTs).
+
+It compares the structure of the programs rather than only their textual representation.
+
+This helps identify similarities when code has been modified through:
+
+- Variable renaming
+- Code rearrangement
+- Refactoring
+- Structural transformations
+
+EHSA uses tree-based comparison techniques (Zhang-Shasha tree edit distance) to analyze AST structure.
+
+---
+
+### 3. Semantic Analysis
+
+The semantic channel uses a pretrained code representation model to compare the meaning and context of source code.
+
+EHSA uses:
+
+`microsoft/unixcoder-base`
+
+This allows the system to detect similarities even when the source code has undergone substantial textual changes.
+
+---
+
+### 4. Behavioral Analysis
+
+The behavioral analyzer executes compatible Python programs in controlled subprocess environments.
+
+It compares execution results across test inputs to identify functional similarities.
+
+Execution controls include:
+
+- Execution timeout (2.0s default limit)
+- Memory restrictions where supported (128 MB cap on Unix platforms)
+- Restricted execution environment
+- Static checks before execution (AST import filtering and builtin function blocking)
+
+Behavioral analysis is used as an additional signal rather than as the only similarity measure.
+
+---
+
+### 5. Evidence Generation
+
+EHSA does not only produce a similarity value.
+
+The system collects supporting evidence from the individual analysis channels.
+
+Examples include:
+
+- Matching lexical patterns
+- AST structural information
+- Semantic similarity information
+- Execution results
+- Transformation indicators
+
+This evidence is stored with the corresponding analysis run and can be displayed through the frontend.
+
+---
+
+## Architecture
 
 ```mermaid
 flowchart LR
-    subgraph Client["Frontend (Next.js 16)"]
-        UI["React 19 App / Dashboard"]
-        Axios["Axios API Client + JWT Interceptor"]
+
+    User["User"]
+
+    subgraph Frontend["Frontend"]
+        UI["Next.js / React UI"]
+        Editor["Code Editor"]
+        Dashboard["Analysis Dashboard"]
     end
 
-    subgraph Server["Backend (FastAPI Engine)"]
-        Router["API Router (/api/v1)"]
-        Auth["Auth & Security Middleware"]
-        SimEngine["Parallel Similarity Modules"]
-        FusionEngine["Fusion & Adaptive Retrainer"]
-        ExplainEngine["Transformation & Explanation Generator"]
+    subgraph Backend["FastAPI Backend"]
+        API["REST API"]
+        Auth["Authentication & RBAC"]
+
+        subgraph Analysis["Similarity Analysis Engine"]
+            Lexical["Lexical Analysis"]
+            Structural["Structural Analysis"]
+            Semantic["Semantic Analysis"]
+            Behavioral["Behavioral Analysis"]
+        end
+
+        Fusion["Fusion Engine"]
+        Explain["Evidence & Explanation Engine"]
     end
 
-    subgraph Database["Persistence Layer"]
-        DB[(SQLite / PostgreSQL via SQLAlchemy 2.0)]
+    subgraph Persistence["Persistence Layer"]
+        DB["SQLite / PostgreSQL"]
     end
 
-    UI --> Axios
-    Axios --> Router
-    Router --> Auth
-    Auth --> SimEngine
-    SimEngine --> FusionEngine
-    FusionEngine --> ExplainEngine
-    ExplainEngine --> DB
+    User --> UI
+    UI --> Editor
+    UI --> Dashboard
+
+    Editor --> API
+    API --> Auth
+    Auth --> Analysis
+
+    Lexical --> Fusion
+    Structural --> Fusion
+    Semantic --> Fusion
+    Behavioral --> Fusion
+
+    Fusion --> Explain
+    Explain --> DB
+
+    DB --> API
+    API --> Dashboard
 ```
 
-- **Frontend**: Next.js 16 (App Router), React 19, TailwindCSS, Axios client with JWT authorization interceptors.
-- **Backend**: FastAPI async web application, SQLAlchemy 2.0 ORM, PyTorch CPU inference, scikit-learn.
-- **Database**: SQLite (`ehsa.db` via `sqlite+aiosqlite`) for local development; PostgreSQL compatible via `DATABASE_URL`.
+- **Frontend**: Next.js 16 (App Router), React 19, TailwindCSS, Axios API client with JWT authorization interceptors.
+- **Backend**: FastAPI async web engine, SQLAlchemy 2.0 ORM, PyTorch CPU inference, scikit-learn.
+- **Persistence**: SQLite (`ehsa.db` via `sqlite+aiosqlite`) for local development; PostgreSQL compatible via `DATABASE_URL`.
 
 ---
 
 ## Technology Stack
 
-| Component | Technology | Version / Specification |
+| Layer | Technology | Version / Specification |
 |---|---|---|
+| **Frontend UI** | Next.js / React | Next.js 16 (App Router) / React 19 |
+| **Styling** | TailwindCSS | Modern dark/light UI |
 | **Backend Framework** | FastAPI | `≥ 0.100.0` |
 | **Async Runtime** | Uvicorn / asyncio | Python 3.10+ |
 | **ORM & Database** | SQLAlchemy 2.0 / aiosqlite | SQLite / PostgreSQL |
 | **Structural Engine** | Python `ast` + `zss` | Zhang-Shasha Tree Edit Distance |
 | **Semantic Model** | Hugging Face Transformers + PyTorch | `microsoft/unixcoder-base` |
 | **Adaptive ML** | scikit-learn | `LogisticRegression(penalty="l2")` |
-| **Frontend Framework** | Next.js / React | Next.js 16 / React 19 |
-| **Styling** | TailwindCSS | Modern dark/light glassmorphic UI |
-| **Auth & Security** | PyJWT / Passlib / hashlib | HS256 JWT, PBKDF2-HMAC-SHA256 |
+| **Authentication** | PyJWT / Passlib / hashlib | HS256 JWT, PBKDF2-HMAC-SHA256 |
+| **Containerization** | Docker / Docker Compose | Multi-container stack |
 
 ---
 
